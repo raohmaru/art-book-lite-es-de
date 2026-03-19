@@ -1,0 +1,12 @@
+<theme>
+    <include>./theme.xml</include>
+
+    <variant name="all">
+        <view name="gamelist">
+            <textlist name="gamelist-list">
+                <systemNameSuffix>true</systemNameSuffix>
+                <letterCaseSystemNameSuffix>uppercase</letterCaseSystemNameSuffix>
+            </textlist>
+        </view>
+    </variant>
+</theme>

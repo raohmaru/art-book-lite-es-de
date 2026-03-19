@@ -1,0 +1,17 @@
+<!-- 11:17 -->
+<theme>
+   <aspectRatio name="16:9">
+      <view name="gamelist">
+         <grid name="gamelist-grid">
+            <itemSize>0.1981242 0.5416667</itemSize><!-- 5 across: 169 260 -->
+         </grid>
+      </view>
+   </aspectRatio>
+   <aspectRatio name="4:3">
+      <view name="gamelist">
+         <grid name="gamelist-grid">
+            <itemSize>0.2476562 0.5104167</itemSize><!-- 4 across: 158.5 245 -->
+         </grid>
+      </view>
+   </aspectRatio>
+</theme>

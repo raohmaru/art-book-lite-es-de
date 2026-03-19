@@ -1,0 +1,758 @@
+<!--
+theme name:     Art Book Lite (ES-DE Edition)
+author:         Raohmaru
+license:        creative commons CC-BY-NC-SA
+https://github.com/raohmaru/art-book-lite-es-de
+
+Based on Art Book Next (ES-DE Edition) by Anthony Caccese
+https://github.com/anthonycaccese/art-book-next-es-de
+-->
+<theme>
+
+    <!--
+    ///
+    System Metadata
+    ///
+    -->
+    <include>./_systems/metadata/_default.xml</include>
+    <include>./_systems/metadata/${system.theme}.xml</include>
+
+    <!--
+    ///
+    Variables
+    ///
+    -->
+    <variables>
+        <!-- <fontLight>./_assets/fonts/Mulish/Mulish-Light.ttf</fontLight> -->
+        <!-- <fontRegular>./_assets/fonts/Mulish/Mulish-Medium.ttf</fontRegular> -->
+        <fontLight>./_assets/fonts/Roboto/Roboto-Light.ttf</fontLight>
+        <fontRegular>./_assets/fonts/Roboto/Roboto-Medium.ttf</fontRegular>
+        <!-- <fontLight>./_assets/fonts/Ubuntu/Ubuntu-Light.ttf</fontLight> -->
+        <!-- <fontRegular>./_assets/fonts/Ubuntu/Ubuntu-Medium.ttf</fontRegular> -->
+        <fontLogo>./_assets/fonts/Asap/Asap_SemiCondensed-BlackItalic-ESDE.otf</fontLogo>
+        <spacerImage>./_assets/images/space.png</spacerImage>
+    </variables>
+    <include>./colors.xml</include>
+
+    <!--
+    ///
+    All Views
+    ///
+    -->
+    <view name="system,gamelist">
+        <!-- Start: menu styling resets -->
+        <helpsystem name="help-menu-view">
+            <scope>menu</scope>
+            <origin>0.5 1</origin>
+            <pos>0.5 0.9875</pos>
+            <iconColor>cccccc</iconColor>
+            <textColor>cccccc</textColor>
+            <backgroundColor>181818</backgroundColor>
+            <backgroundHorizontalPadding>0.01 0.01</backgroundHorizontalPadding>
+            <backgroundVerticalPadding>0.015 0.02</backgroundVerticalPadding>
+            <backgroundCornerRadius>0.005</backgroundCornerRadius>
+            <entryRelativeScale>0.9</entryRelativeScale>
+        </helpsystem>
+        <!-- End: menu styling resets -->
+        <image name="background">
+            <origin>0 0</origin>
+            <pos>0 0</pos>
+            <size>1 1</size>
+            <path>${spacerImage}</path>
+            <tile>true</tile>
+            <zIndex>0</zIndex>
+        </image>
+        <clock name="clock">
+            <origin>0 0</origin>
+            <fontPath>${fontLight}</fontPath>
+            <color>${statusColor}</color>
+            <backgroundColor>${statusBackgroundColor}</backgroundColor>
+            <backgroundCornerRadius>0.01</backgroundCornerRadius>
+        </clock>
+        <systemstatus name="system-status">
+            <origin>1 0.5</origin>
+            <textRelativeScale>0.7</textRelativeScale>
+            <fontPath>${fontLight}</fontPath>
+            <customIcon icon="icon_bluetooth">./_assets/images/icon-bluetooth.svg</customIcon>
+            <customIcon icon="icon_wifi">./_assets/images/icon-wifi.svg</customIcon>
+            <customIcon icon="icon_cellular">./_assets/images/icon-cellular.svg</customIcon>
+            <customIcon icon="icon_battery_charging">./_assets/images/icon-battery-charging.svg</customIcon>
+            <customIcon icon="icon_battery_full">./_assets/images/icon-battery-full.svg</customIcon>
+            <customIcon icon="icon_battery_high">./_assets/images/icon-battery-high.svg</customIcon>
+            <customIcon icon="icon_battery_medium">./_assets/images/icon-battery-medium.svg</customIcon>
+            <customIcon icon="icon_battery_low">./_assets/images/icon-battery-low.svg</customIcon>
+            <color>${statusColor}</color>
+            <backgroundColor>${statusBackgroundColor}</backgroundColor>
+            <backgroundCornerRadius>0.01</backgroundCornerRadius>
+        </systemstatus>
+        <helpsystem name="help-system-view,help-gamelist-view">
+            <scope>view</scope>
+            <iconColor>${helpIconColor}</iconColor>
+            <textColor>${helpTextColor}</textColor>
+            <backgroundColor>${helpBackgroundColor}</backgroundColor>
+            <backgroundCornerRadius>0.01</backgroundCornerRadius>
+            <entryRelativeScale>0.7</entryRelativeScale>
+        </helpsystem>
+    </view>
+
+    <!--
+    ///
+    System View
+    ///
+    -->
+    <view name="system">
+        <image name="background">
+            <color>${systemBackgroundColor}</color>
+        </image>
+        <carousel name="system-carousel">
+            <origin>0 0</origin>
+            <pos>0 0</pos>
+            <size>1 1</size>
+            <color>00000000</color>
+            <textColor>00000000</textColor>
+            <itemTransitions>animate</itemTransitions>
+            <itemVerticalAlignment>center</itemVerticalAlignment>
+            <fastScrolling>true</fastScrolling>
+            <defaultImage>${artworkSourceDefault}/${artworkDefaultImage}.png</defaultImage>
+            <staticImage>${artworkSource}/${system.theme}.png</staticImage>
+            <imageColor>${systemArtColor}</imageColor>
+            <imageSelectedColor>${systemArtColor}</imageSelectedColor>
+            <imageSaturation>${systemArtSaturation}</imageSaturation>
+            <!-- <itemScale>1.1</itemScale> -->
+            <itemSize>1 1</itemSize>
+            <itemStacking>ascendingRaised</itemStacking>
+            <selectedItemMargins>0.015 0.015</selectedItemMargins>
+            <selectedItemOffset>0.005 -0.05</selectedItemOffset>
+            <zIndex>1</zIndex>
+        </carousel>
+        <image name="system-logo">
+            <origin>0.5 0.5</origin>
+            <pos>${systemViewLogoPos}</pos>
+            <maxSize>0.5 0.3</maxSize>
+            <default>./_systems/logos/${system.theme}.svg</default>
+            <path>${logoSource}/${system.theme}.svg</path>
+            <color>${systemLogoColor}</color>
+            <zIndex>3</zIndex>
+        </image>
+        <text name="system-game-count">
+            <origin>1 0.5</origin>
+            <pos>0.97655334 0.9208333333</pos> <!-- 833 442 -->
+            <fontPath>${fontRegular}</fontPath>
+            <systemdata>gamecountGames</systemdata>
+            <letterCase>capitalize</letterCase>
+            <color>${helpTextColor}</color>
+            <backgroundColor>${helpBackgroundColor}</backgroundColor>
+            <backgroundMargins>0.01 0.01</backgroundMargins>
+            <backgroundCornerRadius>0.005</backgroundCornerRadius>
+        </text>
+        <text name="custom-collection-name">
+            <origin>0.5 0.5</origin>
+            <pos>${systemViewLogoPos}</pos>
+            <fontSize>0.125</fontSize> <!-- 60 -->
+            <fontPath>${fontLogo}</fontPath>
+            <color>${systemLogoColor}</color>
+            <letterCase>uppercase</letterCase>
+            <text>${system.fullName.customCollections}</text>
+        </text>
+    </view>
+
+    <!--
+    ///
+    Gamelist View - Global
+    ///
+    -->
+    <view name="gamelist">
+        <clock name="clock">
+            <scope>none</scope>
+        </clock>
+        <image name="logo">
+            <origin>0.5 0.5</origin>
+            <default>./_systems/logos/${system.theme}.svg</default>
+            <path>${logoSource}/${system.theme}.svg</path>
+            <zIndex>5</zIndex>
+        </image>
+        <text name="custom-collection-name">
+            <origin>0.5 0.5</origin>
+            <fontSize>0.070833</fontSize> <!-- 40 -->
+            <fontPath>${fontLogo}</fontPath>
+            <color>${gamelistListsystemLogoColor}</color>
+            <letterCase>uppercase</letterCase>
+            <text>${system.fullName.customCollections}</text>
+        </text>
+        <helpsystem name="help-gamelist-view">
+            <backgroundColor>${gamelistListHelpBackgroundColor}</backgroundColor>
+        </helpsystem>
+    </view>
+
+    <!--
+    ///
+    Gamelist View - List Variants
+    ///
+    -->
+    <variant name="
+        gamelist-list-basic,
+        gamelist-list-basic-nh,
+        gamelist-list-metadata-miximage,
+        gamelist-list-metadata-miximage-nh,
+        gamelist-list-metadata-cover,
+        gamelist-list-metadata-cover-nh,
+        gamelist-list-metadata-screenshot,
+        gamelist-list-metadata-screenshot-nh,
+        gamelist-list-metadata-screenshot-marquee,
+        gamelist-list-metadata-screenshot-marquee-nh,
+        gamelist-list-metadata-screenshot-cover,
+        gamelist-list-metadata-screenshot-cover-nh,
+        gamelist-list-cover,
+        gamelist-list-cover-nh,
+        gamelist-list-screenshot-marquee,
+        gamelist-list-screenshot-marquee-nh
+        ">
+        <view name="gamelist">
+            <image name="background">
+                <color>${gamelistListBackgroundColor}</color>
+            </image>
+            <badges name="badges">
+                <lines>1</lines>
+                <itemsPerLine>5</itemsPerLine>
+                <itemMargin>0.01 0.01</itemMargin>
+                <slots>folder,favorite,completed,collection,altemulator</slots>
+                <customBadgeIcon badge="folder">./_assets/images/badge-folder.svg</customBadgeIcon>
+                <customBadgeIcon badge="favorite">./_assets/images/badge-favorite.svg</customBadgeIcon>
+                <customBadgeIcon badge="completed">./_assets/images/badge-completed.svg</customBadgeIcon>
+                <customBadgeIcon badge="collection">./_assets/images/badge-collection.svg</customBadgeIcon>
+                <customBadgeIcon badge="altemulator">./_assets/images/badge-altemulator.svg</customBadgeIcon>
+                <controllerSize>0.8</controllerSize>
+                <folderLinkSize>0.8</folderLinkSize>
+            </badges>
+            <badges name="badges">
+                <horizontalAlignment>left</horizontalAlignment>
+                <direction>row</direction>
+            </badges>
+            <image name="gamelist-background">
+                <origin>0 0</origin>
+                <pos>0 0</pos>
+                <path>${spacerImage}</path>
+                <color>${gamelistListTextlistBackgroundColor}</color>
+                <zIndex>4</zIndex>
+            </image>
+            <image name="metadata-background">
+                <origin>0 0</origin>
+                <pos>0 0</pos>
+                <size>1 1</size>
+                <path>./_assets/images/metadata-background.svg</path>
+                <color>${gamelistMetadataBackgroundColor}</color>
+                <zIndex>1</zIndex>
+                <visible>false</visible>
+            </image>
+            <image name="logo">
+                <color>${gamelistListLogoColor}</color>
+            </image>
+            <textlist name="gamelist-list">
+                <origin>0 0</origin>
+                <horizontalAlignment>left</horizontalAlignment>
+                <fontPath>${fontRegular}</fontPath>
+                <systemNameSuffix>false</systemNameSuffix>
+                <selectorColor>00000000</selectorColor>
+                <selectedColor>${gamelistListTextlistSelectedColor}</selectedColor>
+                <primaryColor>${gamelistListTextlistUnselectedColor}</primaryColor>
+                <secondaryColor>${gamelistListTextlistUnselectedColor}</secondaryColor>
+                <selectedBackgroundColor>${gamelistListTextlistSelectedBackgroundColor}</selectedBackgroundColor>
+                <selectedBackgroundCornerRadius>0.005</selectedBackgroundCornerRadius>
+                <zIndex>5</zIndex>
+            </textlist>
+        </view>
+    </variant>
+    <variant name="
+        gamelist-list-basic,
+        gamelist-list-basic-nh
+        ">
+        <view name="gamelist">
+            <textlist name="gamelist-list">
+                <horizontalAlignment>center</horizontalAlignment>
+            </textlist>
+        </view>
+    </variant>
+    <variant name="
+        gamelist-list-metadata-miximage,
+        gamelist-list-metadata-miximage-nh,
+        gamelist-list-metadata-cover,
+        gamelist-list-metadata-cover-nh,
+        gamelist-list-metadata-screenshot,
+        gamelist-list-metadata-screenshot-nh,
+        gamelist-list-metadata-screenshot-marquee,
+        gamelist-list-metadata-screenshot-marquee-nh,
+        gamelist-list-metadata-screenshot-cover,
+        gamelist-list-metadata-screenshot-cover-nh,
+        gamelist-list-cover,
+        gamelist-list-cover-nh,
+        gamelist-list-screenshot-marquee,
+        gamelist-list-screenshot-marquee-nh
+        ">
+        <view name="gamelist">
+            <video name="game-art">
+                <delay>3</delay>
+                <iterationCount>1</iterationCount>
+                <onIterationsDone>image</onIterationsDone>
+                <interpolation>nearest</interpolation>
+                <pillarboxes>false</pillarboxes>
+            </video>
+        </view>
+    </variant>
+
+    <!--
+    ///
+    Gamelist View - List Variants: Metadata
+    ///
+    -->
+    <variant name="
+        gamelist-list-metadata-miximage,
+        gamelist-list-metadata-miximage-nh,
+        gamelist-list-metadata-cover,
+        gamelist-list-metadata-cover-nh,
+        gamelist-list-metadata-screenshot,
+        gamelist-list-metadata-screenshot-nh,
+        gamelist-list-metadata-screenshot-marquee,
+        gamelist-list-metadata-screenshot-marquee-nh,
+        gamelist-list-metadata-screenshot-cover,
+        gamelist-list-metadata-screenshot-cover-nh
+        ">
+        <view name="gamelist">
+            <text name="description">
+                <origin>0 0</origin>
+                <fontPath>${fontLight}</fontPath>
+                <horizontalAlignment>left</horizontalAlignment>
+                <verticalAlignment>center</verticalAlignment>
+                <color>${gamelistListDescriptionColor}</color>
+                <metadata>description</metadata>
+                <container>true</container>
+                <containerStartDelay>5</containerStartDelay>
+                <containerVerticalSnap>false</containerVerticalSnap>
+                <visible>false</visible>
+            </text>
+            <rating name="rating">
+                <origin>0 0.5</origin>
+                <filledPath>./_assets/images/icon-star-filled.svg</filledPath>
+                <unfilledPath>./_assets/images/icon-star-unfilled.svg</unfilledPath>
+                <overlay>false</overlay>
+                <color>${gamelistListRatingColor}</color>
+                <visible>false</visible>
+            </rating>
+            <image name="releasedate-icon">
+                <origin>0 0.5</origin>
+                <path>./_assets/images/icon-release-date.svg</path>
+                <color>${gamelistListMetadataIconColor}</color>
+                <metadataElement>true</metadataElement>
+                <visible>false</visible>
+            </image>
+            <datetime name="releasedate">
+                <origin>0 0.5</origin>
+                <metadata>releasedate</metadata>
+                <defaultValue>Unknown</defaultValue>
+                <fontPath>${fontLight}</fontPath>
+                <lineSpacing>1</lineSpacing>
+                <color>${gamelistListMetadataColor}</color>
+                <visible>false</visible>
+            </datetime>
+            <image name="players-icon">
+                <origin>0 0.5</origin>
+                <path>./_assets/images/icon-players.svg</path>
+                <color>${gamelistListMetadataIconColor}</color>
+                <metadataElement>true</metadataElement>
+                <visible>false</visible>
+            </image>
+            <text name="players">
+                <origin>0 0.5</origin>
+                <metadata>players</metadata>
+                <defaultValue>Not Set</defaultValue>
+                <fontPath>${fontLight}</fontPath>
+                <lineSpacing>1</lineSpacing>
+                <color>${gamelistListMetadataColor}</color>
+                <visible>false</visible>
+            </text>
+            <image name="genre-icon">
+                <origin>0 0.5</origin>
+                <path>./_assets/images/icon-genre.svg</path>
+                <color>${gamelistListMetadataIconColor}</color>
+                <metadataElement>true</metadataElement>
+                <visible>false</visible>
+            </image>
+            <text name="genre">
+                <origin>0 0.5</origin>
+                <size>0.111328 0</size> <!-- 95 -->
+                <metadata>genre</metadata>
+                <defaultValue>Not Set</defaultValue>
+                <fontPath>${fontLight}</fontPath>
+                <lineSpacing>1</lineSpacing>
+                <color>${gamelistListMetadataColor}</color>
+                <letterCase>capitalize</letterCase>
+                <container>true</container>
+                <visible>false</visible>
+                <containerType>horizontal</containerType>
+                <containerStartDelay>5</containerStartDelay>
+            </text>
+            <image name="developer-icon">
+                <origin>0 0.5</origin>
+                <path>./_assets/images/icon-developer.svg</path>
+                <color>${gamelistListMetadataIconColor}</color>
+                <metadataElement>true</metadataElement>
+                <visible>false</visible>
+            </image>
+            <text name="developer">
+                <origin>0 0.5</origin>
+                <size>0.111328 0</size> <!-- 95 -->
+                <metadata>developer</metadata>
+                <defaultValue>Not Set</defaultValue>
+                <fontPath>${fontLight}</fontPath>
+                <lineSpacing>1</lineSpacing>
+                <color>${gamelistListMetadataColor}</color>
+                <container>true</container>
+                <containerType>horizontal</containerType>
+                <visible>false</visible>
+            </text>
+            <image name="publisher-icon">
+                <origin>0 0.5</origin>
+                <path>./_assets/images/icon-publisher.svg</path>
+                <color>${gamelistListMetadataIconColor}</color>
+                <metadataElement>true</metadataElement>
+                <visible>false</visible>
+            </image>
+            <text name="publisher">
+                <origin>0 0.5</origin>
+                <metadata>publisher</metadata>
+                <defaultValue>Not Set</defaultValue>
+                <fontPath>${fontLight}</fontPath>
+                <lineSpacing>1</lineSpacing>
+                <color>${gamelistListMetadataColor}</color>
+                <container>true</container>
+                <containerType>horizontal</containerType>
+                <visible>false</visible>
+            </text>
+            <image name="last-played-icon">
+                <origin>0 0.5</origin>
+                <path>./_assets/images/icon-lastplayed.svg</path>
+                <color>${gamelistListMetadataIconColor}</color>
+                <metadataElement>true</metadataElement>
+                <visible>false</visible>
+            </image>
+            <datetime name="last-played">
+                <origin>0 0.5</origin>
+                <metadata>lastplayed</metadata>
+                <defaultValue>Never</defaultValue>
+                <fontPath>${fontLight}</fontPath>
+                <lineSpacing>1</lineSpacing>
+                <color>${gamelistListMetadataColor}</color>
+                <displayRelative>true</displayRelative>
+                <visible>false</visible>
+            </datetime>
+            <image name="play-time-icon">
+                <origin>0 0.5</origin>
+                <path>./_assets/images/icon-playtime.svg</path>
+                <color>${gamelistListMetadataIconColor}</color>
+                <metadataElement>true</metadataElement>
+                <visible>false</visible>
+            </image>
+            <text name="play-time">
+                <origin>0 0.5</origin>
+                <metadata>playtime</metadata>
+                <defaultValue>None</defaultValue>
+                <fontPath>${fontLight}</fontPath>
+                <lineSpacing>1</lineSpacing>
+                <color>${gamelistListMetadataColor}</color>
+                <visible>false</visible>
+            </text>
+        </view>
+    </variant>
+
+    <!--
+    ///
+    Gamelist View - List Variants: Metadata & Miximage
+    ///
+    -->
+    <variant name="
+        gamelist-list-metadata-miximage,
+        gamelist-list-metadata-miximage-nh
+        ">
+        <view name="gamelist">
+            <video name="game-art">
+                <origin>0.5 0.5</origin>
+                <imageType>miximage</imageType>
+            </video>
+        </view>
+    </variant>
+
+    <!--
+    ///
+    Gamelist View - List Variants: Metadata & Boxart
+    ///
+    -->
+    <variant name="
+        gamelist-list-metadata-cover,
+        gamelist-list-metadata-cover-nh
+        ">
+        <view name="gamelist">
+            <video name="game-art">
+                <origin>0.5 0.5</origin>
+                <imageType>cover</imageType>
+                <imageCornerRadius>0.005</imageCornerRadius>
+            </video>
+        </view>
+    </variant>
+
+    <!--
+    ///
+    Gamelist View - List Variants: Metadata, Screenshot
+    ///
+    -->
+    <variant name="
+        gamelist-list-metadata-screenshot,
+        gamelist-list-metadata-screenshot-nh
+        ">
+        <view name="gamelist">
+            <video name="game-art">
+                <origin>0.5 1</origin>
+                <imageType>screenshot</imageType>
+                <zIndex>1</zIndex>
+            </video>
+        </view>
+    </variant>
+
+    <!--
+    ///
+    Gamelist View - List Variants: Metadata, Screenshot & Marquee
+    ///
+    -->
+    <variant name="
+        gamelist-list-metadata-screenshot-marquee,
+        gamelist-list-metadata-screenshot-marquee-nh
+        ">
+        <view name="gamelist">
+            <video name="game-art">
+                <origin>0.5 1</origin>
+                <imageType>screenshot</imageType>
+                <zIndex>1</zIndex>
+            </video>
+            <image name="marquee">
+                <origin>1 1</origin>
+                <imageType>marquee</imageType>
+            </image>
+        </view>
+    </variant>
+
+    <!--
+    ///
+    Gamelist View - List Variants: Metadata, Screenshot & Marquee
+    ///
+    -->
+    <variant name="
+        gamelist-list-metadata-screenshot-cover,
+        gamelist-list-metadata-screenshot-cover-nh
+        ">
+        <view name="gamelist">
+            <video name="game-art">
+                <origin>0.5 1</origin>
+                <imageType>screenshot</imageType>
+                <zIndex>1</zIndex>
+            </video>
+            <image name="cover">
+                <origin>1 1</origin>
+                <imageType>cover</imageType>
+                <cornerRadius>0.005</cornerRadius>
+            </image>
+        </view>
+    </variant>
+
+    <!--
+    ///
+    Gamelist View - List Variants: Boxart
+    ///
+    -->
+    <variant name="
+        gamelist-list-cover,
+        gamelist-list-cover-nh
+        ">
+        <view name="gamelist">
+            <image name="background">
+                <color>${gamelistListTextlistBackgroundColor}</color>
+            </image>
+            <video name="game-art">
+                <origin>0.5 0.5</origin>
+                <imageCornerRadius>0.005</imageCornerRadius>
+                <imageType>cover</imageType>
+                <zIndex>1</zIndex>
+            </video>
+        </view>
+    </variant>
+
+    <!--
+    ///
+    Gamelist View - List Variants: Screenshot + Marquee
+    ///
+    -->
+    <variant name="
+        gamelist-list-screenshot-marquee,
+        gamelist-list-screenshot-marquee-nh
+        ">
+        <view name="gamelist">
+            <video name="game-art">
+                <origin>0.5 0.5</origin>
+                <imageType>screenshot</imageType>
+                <zIndex>1</zIndex>
+            </video>
+            <image name="marquee">
+                <origin>0.5 0.5</origin>
+                <imageType>marquee</imageType>
+            </image>
+        </view>
+    </variant>
+
+    <!--
+    ///
+    Gamelist View - Grid Variants
+    ///
+    -->
+    <variant name="
+        gamelist-grid-cover,
+        gamelist-grid-cover-nh
+        ">
+        <include>./_systems/coversize/${systemCoverSize}.xml</include>
+        <view name="gamelist">
+            <grid name="gamelist-grid">
+                <imageType>cover,screenshot</imageType>
+            </grid>
+        </view>
+    </variant>
+    <variant name="
+        gamelist-grid-cover-steamgriddb,
+        gamelist-grid-cover-steamgriddb-nh
+        ">
+        <include>./_systems/coversize/2-3.xml</include>
+        <view name="gamelist">
+            <grid name="gamelist-grid">
+                <imageType>cover</imageType>
+            </grid>
+        </view>
+    </variant>
+    <variant name="
+        gamelist-grid-screenshot,
+        gamelist-grid-screenshot-nh
+        ">
+        <include>./_systems/coversize/1-1.xml</include>
+        <view name="gamelist">
+            <grid name="gamelist-grid">
+                <imageType>screenshot</imageType>
+                <imageFit>cover</imageFit>
+            </grid>
+        </view>
+    </variant>
+    <variant name="
+        gamelist-grid-cover,
+        gamelist-grid-cover-nh,
+        gamelist-grid-cover-steamgriddb,
+        gamelist-grid-cover-steamgriddb-nh,
+        gamelist-grid-screenshot,
+        gamelist-grid-screenshot-nh
+        ">
+        <view name="gamelist">
+            <image name="background">
+                <color>000000</color>
+            </image>
+            <image name="logo">
+                <origin>0 0.5</origin>
+                <color>${gamelistListLogoColor}</color>
+            </image>
+            <text name="game-name">
+                <origin>0.5 0.5</origin>
+                <metadata>name</metadata>
+                <fontPath>${fontRegular}</fontPath>
+                <systemNameSuffix>false</systemNameSuffix>
+                <lineSpacing>1</lineSpacing>
+                <fontSize>0.0333333</fontSize> <!-- 16 -->
+                <color>${gamelistListMetadataColor}</color>
+                <horizontalAlignment>center</horizontalAlignment>
+            </text>
+            <image name="menu-bar">
+                <origin>0 0</origin>
+                <pos>0 0</pos>
+                <size>1 0.116666666666667</size>
+                <path>${spacerImage}</path>
+                <tile>true</tile>
+                <color>${gamelistListTextlistBackgroundColor}</color>
+                <zIndex>1</zIndex>
+            </image>
+            <image name="menu-bar-border">
+                <origin>0 0</origin>
+                <pos>0 0.116666666666667</pos>
+                <size>1 0.004166666666667</size>
+                <path>${spacerImage}</path>
+                <tile>true</tile>
+                <color>000000</color>
+                <zIndex>2</zIndex>
+            </image>
+            <grid name="gamelist-grid">
+                <origin>0 0</origin>
+                <pos>0 0.116666666666667</pos>
+                <size>1 0.883333333333333</size>
+                <itemScale>1.2</itemScale>
+                <scaleInwards>true</scaleInwards>
+                <itemSpacing>0.002344665885111 0.004166666666667</itemSpacing> <!-- 2 2 -->
+                <unfocusedItemOpacity>0.5</unfocusedItemOpacity>
+                <unfocusedItemDimming>1</unfocusedItemDimming>
+                <unfocusedItemSaturation>1</unfocusedItemSaturation>
+                <fractionalRows>true</fractionalRows>
+                <textColor>ffffff</textColor>
+                <textBackgroundColor>222222</textBackgroundColor>
+                <backgroundColor>000000</backgroundColor>
+                <fontPath>${fontRegular}</fontPath>
+                <fontSize>0.03</fontSize>
+                <textRelativeScale>0.99</textRelativeScale>
+                <imageRelativeScale>1</imageRelativeScale>
+                <imageCornerRadius>0.004</imageCornerRadius>
+                <backgroundCornerRadius>0.004</backgroundCornerRadius>
+                <textBackgroundCornerRadius>0.004</textBackgroundCornerRadius>
+                <zIndex>2</zIndex>
+            </grid>
+        </view>
+    </variant>
+
+    <!--
+    ///
+    Aspect Ratios
+    ///
+    -->
+    <aspectRatio name="16:9">
+        <include>./aspect-ratio-16-9.xml</include>
+    </aspectRatio>
+    <aspectRatio name="4:3">
+        <include>./aspect-ratio-4-3.xml</include>
+    </aspectRatio>
+
+    <!--
+    ///
+    Sounds
+    ///
+    -->
+    <view name="all">
+        <sound name="systembrowse">
+            <path>./_assets/sounds/systembrowse.wav</path>
+        </sound>
+        <sound name="quicksysselect">
+            <path>./_assets/sounds/quicksysselect.wav</path>
+        </sound>
+        <sound name="select">
+            <path>./_assets/sounds/select.wav</path>
+        </sound>
+        <sound name="back">
+            <path>./_assets/sounds/back.wav</path>
+        </sound>
+        <sound name="scroll">
+            <path>./_assets/sounds/scroll.wav</path>
+        </sound>
+        <sound name="favorite">
+            <path>./_assets/sounds/favorite.wav</path>
+        </sound>
+        <sound name="launch">
+            <path>./_assets/sounds/launch.wav</path>
+        </sound>
+    </view>
+
+</theme>

@@ -1,0 +1,40 @@
+<theme>
+    <colorScheme name="custom">
+        <variables>
+            <!-- Fonts -->
+            <fontLight>./_assets/fonts/Roboto/Roboto-Light.ttf</fontLight>
+            <fontRegular>./_assets/fonts/Roboto/Roboto-Medium.ttf</fontRegular>
+            <fontLogo>./_assets/fonts/Asap/Asap_SemiCondensed-BlackItalic-ESDE.otf</fontLogo>
+            <!-- Artwork -->
+            <artworkSource>./theme-customizations/artwork</artworkSource>
+            <artworkSourceDefault>./_systems/artwork-outline</artworkSourceDefault>
+            <logoSource>./theme-customizations/logos</logoSource>
+            <!-- System View -->
+            <systemBackgroundColor>000000</systemBackgroundColor>
+            <systemArtSaturation>1</systemArtSaturation>
+            <systemArtColor>ffffff</systemArtColor>
+            <systemLogoColor>ffffff</systemLogoColor>
+            <!-- Gamelist View - List Variants -->
+            <gamelistListsystemLogoColor>cccccc</gamelistListsystemLogoColor>
+            <gamelistListBackgroundColor>222222</gamelistListBackgroundColor>
+            <gamelistListLogoColor>ffffffcc</gamelistListLogoColor>
+            <gamelistListTextlistBackgroundColor>000000</gamelistListTextlistBackgroundColor>
+            <gamelistListTextlistSelectedColor>000000</gamelistListTextlistSelectedColor>
+            <gamelistListTextlistSelectedBackgroundColor>ffffff</gamelistListTextlistSelectedBackgroundColor>
+            <gamelistListTextlistUnselectedColor>ffffff99</gamelistListTextlistUnselectedColor>
+            <gamelistListMetadataColor>ffffff</gamelistListMetadataColor>
+            <gamelistListMetadataIconColor>ffffff55</gamelistListMetadataIconColor>
+            <gamelistListDescriptionColor>ffffff</gamelistListDescriptionColor>
+            <gamelistListRatingColor>ffffff55</gamelistListRatingColor>
+            <gamelistMetadataBackgroundColor>111111</gamelistMetadataBackgroundColor>
+            <!-- Help System -->
+            <helpBackgroundColor>000000ee</helpBackgroundColor>
+            <gamelistListHelpBackgroundColor>${gamelistListBackgroundColor}</gamelistListHelpBackgroundColor>
+            <helpIconColor>ffffff</helpIconColor>
+            <helpTextColor>999999</helpTextColor>
+            <!-- System Status -->
+            <statusColor>ffffff</statusColor>
+            <statusBackgroundColor>000000ee</statusBackgroundColor>
+        </variables>
+    </colorScheme>
+</theme>
