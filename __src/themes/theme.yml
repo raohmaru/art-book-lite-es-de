@@ -1,0 +1,603 @@
+# theme name:     Art Book Lite (ES-DE Edition)
+# author:         Raohmaru
+# license:        creative commons CC-BY-NC-SA
+# https://github.com/raohmaru/art-book-lite-es-de
+
+# Based on Art Book Next (ES-DE Edition) by Anthony Caccese
+# https://github.com/anthonycaccese/art-book-next-es-de
+
+# 16:9 aspect ratio based on 1280 x 720
+# @width: 1280
+# @height: 720
+theme:
+  include:
+    - ./_systems/metadata/_default.xml
+    - ./_systems/metadata/${system.theme}.xml
+    - ./colors.xml
+  variables:
+    fontLight: ./_assets/fonts/Roboto/Roboto-Light.ttf
+    fontRegular: ./_assets/fonts/Roboto/Roboto-Medium.ttf
+    fontLogo: ./_assets/fonts/Asap/Asap_SemiCondensed-BlackItalic-ESDE.otf
+    spacerImage: ./_assets/images/space.png
+  view:
+    - $name: system,gamelist
+      helpsystem:
+        - $name: help-menu-view
+          scope: menu
+          origin: 0.5 1
+          pos: 640 711
+          iconColor: cccccc
+          textColor: cccccc
+          backgroundColor: 181818
+          backgroundHorizontalPadding: 13 7
+          backgroundVerticalPadding: 19 14
+          backgroundCornerRadius: 0.005
+          entryRelativeScale: 0.9
+        - $name: help-system-view,help-gamelist-view
+          scope: view
+          iconColor: ${helpIconColor}
+          textColor: ${helpTextColor}
+          backgroundColor: ${helpBackgroundColor}
+          backgroundCornerRadius: 0.01
+          entryRelativeScale: 0.7
+      image:
+        $name: background
+        origin: 0 0
+        pos: 0 0
+        size: 1280 720
+        path: ${spacerImage}
+        tile: true
+        zIndex: 0
+      clock:
+        $name: clock
+        origin: 0 0
+        fontPath: ${fontLight}
+        color: ${statusColor}
+        backgroundColor: ${statusBackgroundColor}
+        backgroundCornerRadius: 0.01
+      systemstatus:
+        $name: system-status
+        origin: 1 0.5
+        textRelativeScale: 0.7
+        fontPath: ${fontLight}
+        customIcon:
+          - '#text': ./_assets/images/icon-bluetooth.svg
+            $icon: icon_bluetooth
+          - '#text': ./_assets/images/icon-wifi.svg
+            $icon: icon_wifi
+          - '#text': ./_assets/images/icon-cellular.svg
+            $icon: icon_cellular
+          - '#text': ./_assets/images/icon-battery-charging.svg
+            $icon: icon_battery_charging
+          - '#text': ./_assets/images/icon-battery-full.svg
+            $icon: icon_battery_full
+          - '#text': ./_assets/images/icon-battery-high.svg
+            $icon: icon_battery_high
+          - '#text': ./_assets/images/icon-battery-medium.svg
+            $icon: icon_battery_medium
+          - '#text': ./_assets/images/icon-battery-low.svg
+            $icon: icon_battery_low
+        color: ${statusColor}
+        backgroundColor: ${statusBackgroundColor}
+        backgroundCornerRadius: 0.01
+    - image:
+        - $name: background
+          color: ${systemBackgroundColor}
+        - $name: system-logo
+          origin: 0.5 0.5
+          pos: ${systemViewLogoPos}
+          maxSize: 640 216
+          default: ./_systems/logos/${system.theme}.svg
+          path: ${logoSource}/${system.theme}.svg
+          color: ${systemLogoColor}
+          zIndex: 3
+      carousel:
+        $name: system-carousel
+        origin: 0 0
+        pos: 0 0
+        size: 1280 720
+        color: 00000000
+        textColor: 00000000
+        itemTransitions: animate
+        itemVerticalAlignment: center
+        fastScrolling: true
+        defaultImage: ${artworkSourceDefault}/${artworkDefaultImage}.png
+        staticImage: ${artworkSource}/${system.theme}.png
+        imageColor: ${systemArtColor}
+        imageSelectedColor: ${systemArtColor}
+        imageSaturation: ${systemArtSaturation}
+        itemSize: 1280 720
+        itemStacking: ascendingRaised
+        selectedItemMargins: 19 11
+        selectedItemOffset: 0.005 -0.05
+        zIndex: 1
+      text:
+        - $name: system-game-count
+          origin: 1 0.5
+          pos: 1250 663
+          fontPath: ${fontRegular}
+          systemdata: gamecountGames
+          letterCase: capitalize
+          color: ${helpTextColor}
+          backgroundColor: ${helpBackgroundColor}
+          backgroundMargins: 13 7
+          backgroundCornerRadius: 0.005
+        - $name: custom-collection-name
+          origin: 0.5 0.5
+          pos: ${systemViewLogoPos}
+          fontSize: 90
+          fontPath: ${fontLogo}
+          color: ${systemLogoColor}
+          letterCase: uppercase
+          text: ${system.fullName.customCollections}
+      $name: system
+    - $name: gamelist
+      clock:
+        $name: clock
+        scope: none
+      image:
+        $name: logo
+        origin: 0.5 0.5
+        default: ./_systems/logos/${system.theme}.svg
+        path: ${logoSource}/${system.theme}.svg
+        zIndex: 5
+      text:
+        $name: custom-collection-name
+        origin: 0.5 0.5
+        fontSize: 51
+        fontPath: ${fontLogo}
+        color: ${gamelistListsystemLogoColor}
+        letterCase: uppercase
+        text: ${system.fullName.customCollections}
+      helpsystem:
+        $name: help-gamelist-view
+        backgroundColor: ${gamelistListHelpBackgroundColor}
+    - sound:
+        - $name: systembrowse
+          path: ./_assets/sounds/systembrowse.wav
+        - $name: quicksysselect
+          path: ./_assets/sounds/quicksysselect.wav
+        - $name: select
+          path: ./_assets/sounds/select.wav
+        - $name: back
+          path: ./_assets/sounds/back.wav
+        - $name: scroll
+          path: ./_assets/sounds/scroll.wav
+        - $name: favorite
+          path: ./_assets/sounds/favorite.wav
+        - $name: launch
+          path: ./_assets/sounds/launch.wav
+      $name: all
+  variant:
+    - view:
+        image:
+          - $name: background
+            color: ${gamelistListBackgroundColor}
+          - $name: gamelist-background
+            origin: 0 0
+            pos: 0 0
+            path: ${spacerImage}
+            color: ${gamelistListTextlistBackgroundColor}
+            zIndex: 4
+          - $name: metadata-background
+            origin: 0 0
+            pos: 0 0
+            size: 1280 720
+            path: ./_assets/images/metadata-background.svg
+            color: ${gamelistMetadataBackgroundColor}
+            zIndex: 1
+            visible: false
+          - $name: logo
+            color: ${gamelistListLogoColor}
+        badges:
+          - $name: badges
+            lines: 1
+            itemsPerLine: 5
+            itemMargin: 13 7
+            slots: folder,favorite,completed,collection,altemulator
+            customBadgeIcon:
+              - '#text': ./_assets/images/badge-folder.svg
+                $badge: folder
+              - '#text': ./_assets/images/badge-favorite.svg
+                $badge: favorite
+              - '#text': ./_assets/images/badge-completed.svg
+                $badge: completed
+              - '#text': ./_assets/images/badge-collection.svg
+                $badge: collection
+              - '#text': ./_assets/images/badge-altemulator.svg
+                $badge: altemulator
+            controllerSize: 0.8
+            folderLinkSize: 0.8
+          - $name: badges
+            horizontalAlignment: left
+            direction: row
+        textlist:
+          $name: gamelist-list
+          origin: 0 0
+          horizontalAlignment: left
+          fontPath: ${fontRegular}
+          systemNameSuffix: false
+          selectorColor: 00000000
+          selectedColor: ${gamelistListTextlistSelectedColor}
+          primaryColor: ${gamelistListTextlistUnselectedColor}
+          secondaryColor: ${gamelistListTextlistUnselectedColor}
+          selectedBackgroundColor: ${gamelistListTextlistSelectedBackgroundColor}
+          selectedBackgroundCornerRadius: 0.005
+          zIndex: 5
+        $name: gamelist
+      $name: |-
+        gamelist-list-basic,
+        gamelist-list-basic-nh,
+        gamelist-list-metadata-miximage,
+        gamelist-list-metadata-miximage-nh,
+        gamelist-list-metadata-cover,
+        gamelist-list-metadata-cover-nh,
+        gamelist-list-metadata-screenshot,
+        gamelist-list-metadata-screenshot-nh,
+        gamelist-list-metadata-screenshot-marquee,
+        gamelist-list-metadata-screenshot-marquee-nh,
+        gamelist-list-metadata-screenshot-cover,
+        gamelist-list-metadata-screenshot-cover-nh,
+        gamelist-list-cover,
+        gamelist-list-cover-nh,
+        gamelist-list-screenshot-marquee,
+        gamelist-list-screenshot-marquee-nh
+    - view:
+        textlist:
+          $name: gamelist-list
+          horizontalAlignment: center
+        $name: gamelist
+      $name: |-
+        gamelist-list-basic,
+        gamelist-list-basic-nh
+    - view:
+        video:
+          $name: game-art
+          delay: 3
+          iterationCount: 1
+          onIterationsDone: image
+          interpolation: nearest
+          pillarboxes: false
+        $name: gamelist
+      $name: |-
+        gamelist-list-metadata-miximage,
+        gamelist-list-metadata-miximage-nh,
+        gamelist-list-metadata-cover,
+        gamelist-list-metadata-cover-nh,
+        gamelist-list-metadata-screenshot,
+        gamelist-list-metadata-screenshot-nh,
+        gamelist-list-metadata-screenshot-marquee,
+        gamelist-list-metadata-screenshot-marquee-nh,
+        gamelist-list-metadata-screenshot-cover,
+        gamelist-list-metadata-screenshot-cover-nh,
+        gamelist-list-cover,
+        gamelist-list-cover-nh,
+        gamelist-list-screenshot-marquee,
+        gamelist-list-screenshot-marquee-nh
+    - view:
+        text:
+          - $name: description
+            origin: 0 0
+            fontPath: ${fontLight}
+            horizontalAlignment: left
+            verticalAlignment: center
+            color: ${gamelistListDescriptionColor}
+            metadata: description
+            container: true
+            containerStartDelay: 5
+            containerVerticalSnap: false
+            visible: false
+          - $name: players
+            origin: 0 0.5
+            metadata: players
+            defaultValue: Not Set
+            fontPath: ${fontLight}
+            lineSpacing: 1
+            color: ${gamelistListMetadataColor}
+            visible: false
+          - $name: genre
+            origin: 0 0.5
+            size: 142 0
+            metadata: genre
+            defaultValue: Not Set
+            fontPath: ${fontLight}
+            lineSpacing: 1
+            color: ${gamelistListMetadataColor}
+            letterCase: capitalize
+            container: true
+            visible: false
+            containerType: horizontal
+            containerStartDelay: 5
+          - $name: developer
+            origin: 0 0.5
+            size: 142 0
+            metadata: developer
+            defaultValue: Not Set
+            fontPath: ${fontLight}
+            lineSpacing: 1
+            color: ${gamelistListMetadataColor}
+            container: true
+            containerType: horizontal
+            visible: false
+          - $name: publisher
+            origin: 0 0.5
+            metadata: publisher
+            defaultValue: Not Set
+            fontPath: ${fontLight}
+            lineSpacing: 1
+            color: ${gamelistListMetadataColor}
+            container: true
+            containerType: horizontal
+            visible: false
+          - $name: play-time
+            origin: 0 0.5
+            metadata: playtime
+            defaultValue: None
+            fontPath: ${fontLight}
+            lineSpacing: 1
+            color: ${gamelistListMetadataColor}
+            visible: false
+        rating:
+          $name: rating
+          origin: 0 0.5
+          filledPath: ./_assets/images/icon-star-filled.svg
+          unfilledPath: ./_assets/images/icon-star-unfilled.svg
+          overlay: false
+          color: ${gamelistListRatingColor}
+          visible: false
+        image:
+          - $name: releasedate-icon
+            origin: 0 0.5
+            path: ./_assets/images/icon-release-date.svg
+            color: ${gamelistListMetadataIconColor}
+            metadataElement: true
+            visible: false
+          - $name: players-icon
+            origin: 0 0.5
+            path: ./_assets/images/icon-players.svg
+            color: ${gamelistListMetadataIconColor}
+            metadataElement: true
+            visible: false
+          - $name: genre-icon
+            origin: 0 0.5
+            path: ./_assets/images/icon-genre.svg
+            color: ${gamelistListMetadataIconColor}
+            metadataElement: true
+            visible: false
+          - $name: developer-icon
+            origin: 0 0.5
+            path: ./_assets/images/icon-developer.svg
+            color: ${gamelistListMetadataIconColor}
+            metadataElement: true
+            visible: false
+          - $name: publisher-icon
+            origin: 0 0.5
+            path: ./_assets/images/icon-publisher.svg
+            color: ${gamelistListMetadataIconColor}
+            metadataElement: true
+            visible: false
+          - $name: last-played-icon
+            origin: 0 0.5
+            path: ./_assets/images/icon-lastplayed.svg
+            color: ${gamelistListMetadataIconColor}
+            metadataElement: true
+            visible: false
+          - $name: play-time-icon
+            origin: 0 0.5
+            path: ./_assets/images/icon-playtime.svg
+            color: ${gamelistListMetadataIconColor}
+            metadataElement: true
+            visible: false
+        datetime:
+          - $name: releasedate
+            origin: 0 0.5
+            metadata: releasedate
+            defaultValue: Unknown
+            fontPath: ${fontLight}
+            lineSpacing: 1
+            color: ${gamelistListMetadataColor}
+            visible: false
+          - $name: last-played
+            origin: 0 0.5
+            metadata: lastplayed
+            defaultValue: Never
+            fontPath: ${fontLight}
+            lineSpacing: 1
+            color: ${gamelistListMetadataColor}
+            displayRelative: true
+            visible: false
+        $name: gamelist
+      $name: |-
+        gamelist-list-metadata-miximage,
+        gamelist-list-metadata-miximage-nh,
+        gamelist-list-metadata-cover,
+        gamelist-list-metadata-cover-nh,
+        gamelist-list-metadata-screenshot,
+        gamelist-list-metadata-screenshot-nh,
+        gamelist-list-metadata-screenshot-marquee,
+        gamelist-list-metadata-screenshot-marquee-nh,
+        gamelist-list-metadata-screenshot-cover,
+        gamelist-list-metadata-screenshot-cover-nh
+    - view:
+        video:
+          $name: game-art
+          origin: 0.5 0.5
+          imageType: miximage
+        $name: gamelist
+      $name: |-
+        gamelist-list-metadata-miximage,
+        gamelist-list-metadata-miximage-nh
+    - view:
+        video:
+          $name: game-art
+          origin: 0.5 0.5
+          imageType: cover
+          imageCornerRadius: 0.005
+        $name: gamelist
+      $name: |-
+        gamelist-list-metadata-cover,
+        gamelist-list-metadata-cover-nh
+    - view:
+        video:
+          $name: game-art
+          origin: 0.5 1
+          imageType: screenshot
+          zIndex: 1
+        $name: gamelist
+      $name: |-
+        gamelist-list-metadata-screenshot,
+        gamelist-list-metadata-screenshot-nh
+    - view:
+        video:
+          $name: game-art
+          origin: 0.5 1
+          imageType: screenshot
+          zIndex: 1
+        image:
+          $name: marquee
+          origin: 1 1
+          imageType: marquee
+        $name: gamelist
+      $name: |-
+        gamelist-list-metadata-screenshot-marquee,
+        gamelist-list-metadata-screenshot-marquee-nh
+    - view:
+        video:
+          $name: game-art
+          origin: 0.5 1
+          imageType: screenshot
+          zIndex: 1
+        image:
+          $name: cover
+          origin: 1 1
+          imageType: cover
+          cornerRadius: 0.005
+        $name: gamelist
+      $name: |-
+        gamelist-list-metadata-screenshot-cover,
+        gamelist-list-metadata-screenshot-cover-nh
+    - view:
+        image:
+          $name: background
+          color: ${gamelistListTextlistBackgroundColor}
+        video:
+          $name: game-art
+          origin: 0.5 0.5
+          imageCornerRadius: 0.005
+          imageType: cover
+          zIndex: 1
+        $name: gamelist
+      $name: |-
+        gamelist-list-cover,
+        gamelist-list-cover-nh
+    - view:
+        video:
+          $name: game-art
+          origin: 0.5 0.5
+          imageType: screenshot
+          zIndex: 1
+        image:
+          $name: marquee
+          origin: 0.5 0.5
+          imageType: marquee
+        $name: gamelist
+      $name: |-
+        gamelist-list-screenshot-marquee,
+        gamelist-list-screenshot-marquee-nh
+    - include: ./_systems/coversize/${systemCoverSize}.xml
+      view:
+        grid:
+          $name: gamelist-grid
+          imageType: cover,screenshot
+        $name: gamelist
+      $name: |-
+        gamelist-grid-cover,
+        gamelist-grid-cover-nh
+    - include: ./_systems/coversize/2-3.xml
+      view:
+        grid:
+          $name: gamelist-grid
+          imageType: cover
+        $name: gamelist
+      $name: |-
+        gamelist-grid-cover-steamgriddb,
+        gamelist-grid-cover-steamgriddb-nh
+    - include: ./_systems/coversize/1-1.xml
+      view:
+        grid:
+          $name: gamelist-grid
+          imageType: screenshot
+          imageFit: cover
+        $name: gamelist
+      $name: |-
+        gamelist-grid-screenshot,
+                gamelist-grid-screenshot-nh
+    - view:
+        image:
+          - $name: background
+            color: 00000000
+          - $name: logo
+            origin: 0 0.5
+            color: ${gamelistListLogoColor}
+          - $name: menu-bar
+            origin: 0 0
+            pos: 0 0
+            size: 1280 84
+            path: ${spacerImage}
+            tile: true
+            color: ${gamelistListTextlistBackgroundColor}
+            zIndex: 1
+          - $name: menu-bar-border
+            origin: 0 0
+            pos: 0 84
+            size: 1280 3
+            path: ${spacerImage}
+            tile: true
+            color: 00000000
+            zIndex: 2
+        text:
+          $name: game-name
+          origin: 0.5 0.5
+          metadata: name
+          fontPath: ${fontRegular}
+          systemNameSuffix: false
+          lineSpacing: 1
+          fontSize: 24
+          color: ${gamelistListMetadataColor}
+          horizontalAlignment: center
+        grid:
+          $name: gamelist-grid
+          origin: 0 0
+          pos: 0 84
+          size: 1280 636
+          itemScale: 1.2
+          scaleInwards: true
+          itemSpacing: 3840 3
+          unfocusedItemOpacity: 0.5
+          unfocusedItemDimming: 1
+          unfocusedItemSaturation: 1
+          fractionalRows: true
+          textColor: ffffff
+          textBackgroundColor: 222222
+          backgroundColor: 00000000
+          fontPath: ${fontRegular}
+          fontSize: 22
+          textRelativeScale: 0.99
+          imageRelativeScale: 1
+          imageCornerRadius: 0.004
+          backgroundCornerRadius: 0.004
+          textBackgroundCornerRadius: 0.004
+          zIndex: 2
+        $name: gamelist
+      $name: |-
+        gamelist-grid-cover,
+        gamelist-grid-cover-nh,
+        gamelist-grid-cover-steamgriddb,
+        gamelist-grid-cover-steamgriddb-nh,
+        gamelist-grid-screenshot,
+        gamelist-grid-screenshot-nh
+  aspectRatio:
+    - $name: '16:9'
+      include: ./aspect-ratio-16-9.xml
+    - $name: '4:3'
+      include: ./aspect-ratio-4-3.xml

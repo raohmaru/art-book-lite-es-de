@@ -36,6 +36,8 @@ You can also add custom artwork and logos for any custom collections you create,
 + In your `theme-customizations/artwork` folder add png images for each custom collection you want to display. They should be named the same as the collection.
 + In your `theme-customizations/fonts` folder add TTF font files you want to use.
 
+## Development
+
 ## License
 
-Creative Commons CC-BY-NC-SA - https://creativecommons.org/licenses/by-nc-sa/2.0/
+Creative Commons CC-BY-NC-SA - https://creativecommons.org/licenses/by-nc-sa/4.0

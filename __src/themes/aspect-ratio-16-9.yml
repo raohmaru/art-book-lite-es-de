@@ -1,0 +1,520 @@
+# 16:9 aspect ratio based on 1280 x 720
+# @width: 1280
+# @height: 720
+theme:
+  view:
+    - $name: system,gamelist
+      clock:
+        $name: clock
+        pos: 35 35
+        fontSize: ${clockFontSize}
+        backgroundHorizontalPadding: 11 6
+        backgroundVerticalPadding: 21 12
+      systemstatus:
+        $name: system-status
+        pos: 1250 45
+        height: ${systemStatusHeight}
+        backgroundHorizontalPadding: 11 6
+        backgroundVerticalPadding: 13 8
+        entries: all
+    - $name: system
+      carousel:
+        $name: system-carousel
+        maxItemCount: 5.5
+      image:
+        $name: system-logo
+        maxSize: 640 252
+      text:
+        $name: system-game-count
+        fontSize: ${clockFontSize}
+        lineSpacing: 1.75
+  variant:
+    - $name: |-
+        gamelist-list-basic,
+        gamelist-list-metadata-miximage,
+        gamelist-list-metadata-cover,
+        gamelist-list-metadata-screenshot,
+        gamelist-list-metadata-screenshot-marquee,
+        gamelist-list-metadata-screenshot-cover,
+        gamelist-list-cover,
+        gamelist-list-screenshot-marquee
+      view:
+        - $name: system,gamelist
+          helpsystem:
+            $name: help-system-view,help-gamelist-view
+            fontSize: ${helpsystemFontSize}
+            backgroundHorizontalPadding: 15 8
+            backgroundVerticalPadding: 19 10
+            entrySpacing: 18
+            iconTextSpacing: 8
+        - $name: system
+          helpsystem:
+            - $name: help-system-view
+              origin: 0.5 0.5
+              pos: 640 675
+              entries: ${helpSystemViewEntries}
+            - $name: help-gamelist-view
+              scope: none
+        - $name: gamelist
+          helpsystem:
+            - $name: help-system-view
+              scope: none
+            - $name: help-gamelist-view
+              origin: 0 1
+              pos: 53 675
+              entries: ${helpGamelistViewEntries}
+    - $name: gamelist-list-basic
+      view:
+        $name: gamelist
+        helpsystem:
+          $name: help-gamelist-view
+          origin: 0.5 0.5
+          pos: 640 675
+    - $name: |-
+        gamelist-list-basic-nh,
+        gamelist-list-metadata-miximage-nh,
+        gamelist-list-metadata-cover-nh,
+        gamelist-list-metadata-screenshot-nh,
+        gamelist-list-metadata-screenshot-marquee-nh,
+        gamelist-list-metadata-screenshot-cover-nh,
+        gamelist-list-cover-nh,
+        gamelist-list-screenshot-marquee-nh,
+        gamelist-grid-cover-nh,
+        gamelist-grid-cover-steamgriddb-nh,
+        gamelist-grid-screenshot-nh
+      view:
+        $name: system,gamelist
+        helpsystem:
+          $name: help-system-view,help-gamelist-view
+          origin: 0 0
+          pos: 1280 720
+    - $name: |-
+        gamelist-grid-cover,
+        gamelist-grid-cover-steamgriddb,
+        gamelist-grid-screenshot
+      view:
+        - $name: system,gamelist
+          helpsystem:
+            $name: help-system-view,help-gamelist-view
+            fontSize: ${helpsystemFontSize}
+            backgroundHorizontalPadding: 15 8
+            backgroundVerticalPadding: 19 10
+            entrySpacing: 18
+            iconTextSpacing: 8
+        - $name: system
+          helpsystem:
+            - $name: help-system-view
+              origin: 0.5 0.5
+              pos: 640 675
+              entries: ${helpSystemViewEntries}
+            - $name: help-gamelist-view
+              scope: none
+        - $name: gamelist
+          helpsystem:
+            - $name: help-system-view
+              scope: none
+            - $name: help-gamelist-view
+              origin: 0.5 0.5
+              pos: 640 675
+              entries: ${helpSystemViewEntries}
+    - $name: |-
+        gamelist-list-basic,
+        gamelist-list-basic-nh,
+        gamelist-list-metadata-miximage,
+        gamelist-list-metadata-miximage-nh,
+        gamelist-list-metadata-cover,
+        gamelist-list-metadata-cover-nh,
+        gamelist-list-metadata-screenshot,
+        gamelist-list-metadata-screenshot-nh,
+        gamelist-list-metadata-screenshot-marquee,
+        gamelist-list-metadata-screenshot-marquee-nh,
+        gamelist-list-metadata-screenshot-cover,
+        gamelist-list-metadata-screenshot-cover-nh,
+        gamelist-list-cover,
+        gamelist-list-cover-nh,
+        gamelist-list-screenshot-marquee,
+        gamelist-list-screenshot-marquee-nh
+      view:
+        $name: gamelist
+        image:
+          - $name: gamelist-background
+            size: 1280 720
+            path: ./_assets/images/gamelist-background.svg
+          - $name: logo
+            maxSize: 345 75
+        text:
+          $name: custom-collection-name
+          pos: 640 94
+        textlist:
+          $name: gamelist-list
+          pos: 53 188
+          fontSize: ${gamelistFontSize}
+          selectedBackgroundMargins: ${gamelistSelectedBackgroundMargins}
+      fontSize:
+        - $name: small,x-small
+          variables:
+            gamelistFontSize: 24
+            gamelistSelectedBackgroundMargins: 11 6
+        - $name: medium
+          variables:
+            gamelistFontSize: 27
+            gamelistSelectedBackgroundMargins: 12 7
+        - $name: large
+          variables:
+            gamelistFontSize: 30
+            gamelistSelectedBackgroundMargins: 12 7
+        - $name: x-large
+          variables:
+            gamelistFontSize: 36
+            gamelistSelectedBackgroundMargins: 12 7
+    - $name: |-
+        gamelist-list-basic,
+        gamelist-list-metadata-miximage,
+        gamelist-list-metadata-cover,
+        gamelist-list-metadata-screenshot,
+        gamelist-list-metadata-screenshot-marquee,
+        gamelist-list-metadata-screenshot-cover,
+        gamelist-list-cover,
+        gamelist-list-screenshot-marquee
+      view:
+        $name: gamelist
+        textlist:
+          $name: gamelist-list
+          lineSpacing: ${gamelistLineSpacing}
+      fontSize:
+        - $name: small,x-small
+          variables:
+            gamelistLineSpacing: 1.94444444
+        - $name: medium
+          variables:
+            gamelistLineSpacing: 1.94444444
+        - $name: large
+          variables:
+            gamelistLineSpacing: 1.98051948
+        - $name: x-large
+          variables:
+            gamelistLineSpacing: 1.94444444
+    - $name: |-
+        gamelist-list-basic-nh,
+        gamelist-list-metadata-miximage-nh,
+        gamelist-list-metadata-cover-nh,
+        gamelist-list-metadata-screenshot-nh,
+        gamelist-list-metadata-screenshot-marquee-nh,
+        gamelist-list-metadata-screenshot-cover-nh,
+        gamelist-list-cover-nh,
+        gamelist-list-screenshot-marquee-nh
+      view:
+        $name: gamelist
+        textlist:
+          $name: gamelist-list
+          lineSpacing: ${gamelistLineSpacing}
+      fontSize:
+        - $name: small,x-small
+          variables:
+            gamelistLineSpacing: 1.90340909
+        - $name: medium
+          variables:
+            gamelistLineSpacing: 1.86111111
+        - $name: large
+          variables:
+            gamelistLineSpacing: 1.86111111
+        - $name: x-large
+          variables:
+            gamelistLineSpacing: 1.74479167
+    - $name: |-
+        gamelist-list-basic,
+              gamelist-list-basic-nh
+      view:
+        $name: gamelist
+        image:
+          - $name: gamelist-background
+            visible: false
+          - $name: logo
+            pos: 640 94
+    - $name: gamelist-list-basic
+      view:
+        $name: gamelist
+        textlist:
+          $name: gamelist-list
+          size: 1175 411
+    - $name: gamelist-list-basic-nh
+      view:
+        $name: gamelist
+        textlist:
+          $name: gamelist-list
+          size: 1175 503
+    - $name: |-
+        gamelist-list-metadata-miximage,
+        gamelist-list-metadata-miximage-nh,
+        gamelist-list-metadata-cover,
+        gamelist-list-metadata-cover-nh,
+        gamelist-list-metadata-screenshot,
+        gamelist-list-metadata-screenshot-nh,
+        gamelist-list-metadata-screenshot-marquee,
+        gamelist-list-metadata-screenshot-marquee-nh,
+        gamelist-list-metadata-screenshot-cover,
+        gamelist-list-metadata-screenshot-cover-nh,
+        gamelist-list-cover,
+        gamelist-list-cover-nh,
+        gamelist-list-screenshot-marquee,
+        gamelist-list-screenshot-marquee-nh
+      view:
+        $name: gamelist
+        image:
+          $name: logo
+          pos: 278 94
+        text:
+          $name: custom-collection-name
+          pos: 278 94
+        badges:
+          $name: badges
+          pos: 586 30
+          size: 54 270
+          origin: 0.5 0
+          direction: column
+          rotation: 5
+    - $name: |-
+        gamelist-list-metadata-miximage,
+        gamelist-list-metadata-cover,
+        gamelist-list-metadata-screenshot,
+        gamelist-list-metadata-screenshot-marquee,
+        gamelist-list-metadata-screenshot-cover,
+        gamelist-list-cover,
+        gamelist-list-screenshot-marquee
+      view:
+        $name: gamelist
+        textlist:
+          $name: gamelist-list
+          size: 450 411
+    - $name: |-
+        gamelist-list-metadata-miximage-nh,
+        gamelist-list-metadata-cover-nh,
+        gamelist-list-metadata-screenshot-nh,
+        gamelist-list-metadata-screenshot-marquee-nh,
+        gamelist-list-metadata-screenshot-cover-nh,
+        gamelist-list-cover-nh,
+        gamelist-list-screenshot-marquee-nh
+      view:
+        $name: gamelist
+        textlist:
+          $name: gamelist-list
+          size: 450 411
+    - $name: |-
+        gamelist-list-metadata-miximage,
+        gamelist-list-metadata-miximage-nh,
+        gamelist-list-metadata-cover,
+        gamelist-list-metadata-cover-nh,
+        gamelist-list-metadata-screenshot,
+        gamelist-list-metadata-screenshot-nh,
+        gamelist-list-metadata-screenshot-marquee,
+        gamelist-list-metadata-screenshot-marquee-nh,
+        gamelist-list-metadata-screenshot-cover,
+        gamelist-list-metadata-screenshot-cover-nh
+      view:
+        $name: gamelist
+        text:
+          - $name: description
+            pos: 585 450
+            size: 420 233
+            fontSize: ${gamelistDescriptionFontSize}
+            lineSpacing: ${gamelistDescriptionLineSpacing}
+            visible: true
+          - $name: genre
+            pos: 1101 579
+            fontSize: ${gamelistMetadataFontSize}
+            visible: true
+          - $name: play-time
+            pos: 1101 624
+            fontSize: ${gamelistMetadataFontSize}
+            visible: true
+          - $name: developer
+            pos: 1101 669
+            fontSize: ${gamelistMetadataFontSize}
+            visible: true
+        image:
+          - $name: |-
+              releasedate-icon,
+              genre-icon,
+              play-time-icon,
+              developer-icon
+            size: 0 36
+            visible: true
+          - $name: releasedate-icon
+            pos: 1050 534
+          - $name: genre-icon
+            pos: 1050 579
+          - $name: play-time-icon
+            pos: 1050 624
+          - $name: developer-icon
+            pos: 1050 669
+          - $name: metadata-background
+            visible: true
+        rating:
+          $name: rating
+          size: 0 36
+          pos: 1050 485
+          visible: true
+        datetime:
+          $name: releasedate
+          pos: 1101 534
+          fontSize: ${gamelistMetadataFontSize}
+          format: ${gamelistDateFormat}
+          visible: true
+      fontSize:
+        - $name: x-small
+          variables:
+            gamelistDescriptionFontSize: 21
+            gamelistDescriptionLineSpacing: 1.5
+            gamelistMetadataFontSize: 21
+            gamelistDateFormat: '%d-%m-%Y'
+        - $name: small
+          variables:
+            gamelistDescriptionFontSize: 24
+            gamelistDescriptionLineSpacing: 1.5
+            gamelistMetadataFontSize: 21
+            gamelistDateFormat: '%d-%m-%Y'
+        - $name: medium
+          variables:
+            gamelistDescriptionFontSize: 27
+            gamelistDescriptionLineSpacing: 1.66666667
+            gamelistMetadataFontSize: 21
+            gamelistDateFormat: '%d-%m-%Y'
+        - $name: large
+          variables:
+            gamelistDescriptionFontSize: 30
+            gamelistDescriptionLineSpacing: 1.5
+            gamelistMetadataFontSize: 24
+            gamelistDateFormat: '%d-%m-%Y'
+        - $name: x-large
+          variables:
+            gamelistDescriptionFontSize: 33
+            gamelistDescriptionLineSpacing: 1.81818182
+            gamelistMetadataFontSize: 27
+            gamelistDateFormat: '%m-%Y'
+    - $name: |-
+        gamelist-list-metadata-miximage,
+        gamelist-list-metadata-miximage-nh,
+        gamelist-list-metadata-cover,
+        gamelist-list-metadata-cover-nh
+      view:
+        $name: gamelist
+        video:
+          $name: game-art
+          pos: 945 231
+          maxSize: 660 405
+    - $name: |-
+        gamelist-list-metadata-screenshot, 
+              gamelist-list-metadata-screenshot-nh
+      view:
+        $name: gamelist
+        video:
+          $name: game-art
+          pos: 920 420
+          cropSize: 720 420
+    - $name: |-
+        gamelist-list-metadata-screenshot-marquee, 
+        gamelist-list-metadata-screenshot-marquee-nh
+      view:
+        $name: gamelist
+        image:
+          $name: marquee
+          origin: 0.5 0.5
+          pos: 1145 442
+          maxSize: 225 90
+        video:
+          $name: game-art
+          pos: 920 420
+          cropSize: 720 420
+    - $name: |-
+        gamelist-list-metadata-screenshot-cover,
+        gamelist-list-metadata-screenshot-cover-nh
+      view:
+        $name: gamelist
+        image:
+          $name: cover
+          origin: 0.5 0.5
+          pos: 1145 438
+          maxSize: 225 240
+        video:
+          $name: game-art
+          pos: 920 420
+          cropSize: 720 420
+    - $name: |-
+        gamelist-list-cover,
+        gamelist-list-cover-nh
+      view:
+        $name: gamelist
+        video:
+          $name: game-art
+          pos: 894 360
+          cropSize: 800 720
+          imageMaxSize: 695 622
+        image:
+          $name: gamelist-background
+          visible: false
+        badges:
+          $name: badges
+          visible: false
+    - $name: |-
+        gamelist-list-screenshot-marquee, 
+        gamelist-list-screenshot-marquee-nh
+      view:
+        $name: gamelist
+        image:
+          $name: marquee
+          pos: 922 360
+          maxSize: 465 450
+        video:
+          $name: game-art
+          pos: 880 360
+          cropSize: 800 720
+    - $name: |-
+        gamelist-grid-cover,
+        gamelist-grid-cover-nh,
+        gamelist-grid-cover-steamgriddb,
+        gamelist-grid-cover-steamgriddb-nh,
+        gamelist-grid-screenshot,
+        gamelist-grid-screenshot-nh
+      view:
+        $name: gamelist
+        image:
+          $name: logo
+          maxSize: 195 36
+          pos: 27 45
+        text:
+          - $name: custom-collection-name
+            origin: 0 0.5
+            pos: 27 45
+            fontSize: 26
+          - $name: game-name
+            pos: 640 45
+            size: 512 0
+  fontSize:
+    - $name: small,x-small
+      variables:
+        clockFontSize: 18
+        systemStatusHeight: 27
+        helpsystemFontSize: 30
+        helpSystemViewEntries: start,back,a,x,left/right
+        helpGamelistViewEntries: back,start,a
+    - $name: medium
+      variables:
+        clockFontSize: 21
+        systemStatusHeight: 30
+        helpsystemFontSize: 33
+        helpSystemViewEntries: start,back,a,x,left/right
+        helpGamelistViewEntries: back,start,a
+    - $name: large
+      variables:
+        clockFontSize: 24
+        systemStatusHeight: 33
+        helpsystemFontSize: 36
+        helpSystemViewEntries: start,back,a,x,left/right
+        helpGamelistViewEntries: back,a
+    - $name: x-large
+      variables:
+        clockFontSize: 36
+        systemStatusHeight: 45
+        helpsystemFontSize: 48
+        helpSystemViewEntries: start,back,a,left/right
+        helpGamelistViewEntries: back,a

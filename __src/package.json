@@ -1,0 +1,30 @@
+{
+  "name": "art-book-lite-es-de",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Theme for ES-DE optimized for handheld devices",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run theme && npm run 16x9 && npm run 4x3",
+    "theme": "node yml-to-xml.js -w 1280 -h 720 -o ../theme.xml ./themes/theme.yml",
+    "16x9": "node yml-to-xml.js -w 1280 -h 720 -o ../aspect-ratio-16-9.xml ./themes/aspect-ratio-16-9.yml",
+    "4x3": "node yml-to-xml.js -w 640 -h 480 -o ../aspect-ratio-4-3.xml ./themes/aspect-ratio-4-3.yml",
+    "watch": "node watch.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raohmaru/art-book-lite-es-de.git"
+  },
+  "keywords": [],
+  "author": "raohmaru",
+  "license": "CC BY-NC-SA 4.0",
+  "bugs": {
+    "url": "https://github.com/raohmaru/art-book-lite-es-de/issues"
+  },
+  "homepage": "https://github.com/raohmaru/art-book-lite-es-de#readme",
+  "dependencies": {
+    "chokidar": "^5.0.0",
+    "fast-xml-parser": "5.5.7",
+    "js-yaml": "4.1.1"
+  }
+}
