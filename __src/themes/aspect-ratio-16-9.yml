@@ -223,7 +223,7 @@ theme:
             gamelistLineSpacing: 1.74479167
     - $name: |-
         gamelist-list-basic,
-              gamelist-list-basic-nh
+        gamelist-list-basic-nh
       view:
         $name: gamelist
         image:
@@ -312,6 +312,22 @@ theme:
         gamelist-list-metadata-screenshot-cover-nh
       view:
         $name: gamelist
+        rating:
+          $name: rating
+          size: 0 36
+          pos: 1070 350
+          visible: true
+        datetime:
+          - $name: releasedate
+            pos: 1113 445
+            fontSize: ${gamelistMetadataFontSize}
+            format: ${gamelistDateFormat}
+            visible: true
+          - $name: last-played
+            pos: 1093 669
+            fontSize: ${gamelistMetadataFontSize}
+            format: ${gamelistDateFormat}
+            visible: true
         text:
           - $name: description
             pos: 585 450
@@ -319,16 +335,24 @@ theme:
             fontSize: ${gamelistDescriptionFontSize}
             lineSpacing: ${gamelistDescriptionLineSpacing}
             visible: true
-          - $name: genre
-            pos: 1101 579
+          - $name: players
+            pos: 1117 400
             fontSize: ${gamelistMetadataFontSize}
             visible: true
-          - $name: play-time
-            pos: 1101 624
+          - $name: genre
+            pos: 1109 490
             fontSize: ${gamelistMetadataFontSize}
             visible: true
           - $name: developer
-            pos: 1101 669
+            pos: 1105 535
+            fontSize: ${gamelistMetadataFontSize}
+            visible: true
+          - $name: publisher
+            pos: 1101 580
+            fontSize: ${gamelistMetadataFontSize}
+            visible: true
+          - $name: play-time
+            pos: 1097 624
             fontSize: ${gamelistMetadataFontSize}
             visible: true
         image:
@@ -336,30 +360,28 @@ theme:
               releasedate-icon,
               genre-icon,
               play-time-icon,
-              developer-icon
+              last-played-icon,
+              developer-icon,
+              publisher-icon,
+              players-icon
             size: 0 36
             visible: true
+          - $name: players-icon
+            pos: 1066 400
           - $name: releasedate-icon
-            pos: 1050 534
+            pos: 1062 445
           - $name: genre-icon
-            pos: 1050 579
-          - $name: play-time-icon
-            pos: 1050 624
+            pos: 1058 490
           - $name: developer-icon
-            pos: 1050 669
+            pos: 1054 535
+          - $name: publisher-icon
+            pos: 1050 580
+          - $name: play-time-icon
+            pos: 1046 624
+          - $name: last-played-icon
+            pos: 1042 669
           - $name: metadata-background
             visible: true
-        rating:
-          $name: rating
-          size: 0 36
-          pos: 1050 485
-          visible: true
-        datetime:
-          $name: releasedate
-          pos: 1101 534
-          fontSize: ${gamelistMetadataFontSize}
-          format: ${gamelistDateFormat}
-          visible: true
       fontSize:
         - $name: x-small
           variables:
@@ -404,13 +426,15 @@ theme:
           maxSize: 660 405
     - $name: |-
         gamelist-list-metadata-screenshot, 
-              gamelist-list-metadata-screenshot-nh
+        gamelist-list-metadata-screenshot-nh,
+        gamelist-list-metadata-screenshot-marquee, 
+        gamelist-list-metadata-screenshot-marquee-nh
       view:
         $name: gamelist
         video:
           $name: game-art
-          pos: 920 420
-          cropSize: 720 420
+          pos: 817 420
+          cropSize: 520 420
     - $name: |-
         gamelist-list-metadata-screenshot-marquee, 
         gamelist-list-metadata-screenshot-marquee-nh
@@ -419,12 +443,8 @@ theme:
         image:
           $name: marquee
           origin: 0.5 0.5
-          pos: 1145 442
-          maxSize: 225 90
-        video:
-          $name: game-art
-          pos: 920 420
-          cropSize: 720 420
+          pos: 1167 210
+          maxSize: 180 54
     - $name: |-
         gamelist-list-metadata-screenshot-cover,
         gamelist-list-metadata-screenshot-cover-nh

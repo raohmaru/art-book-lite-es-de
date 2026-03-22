@@ -194,7 +194,7 @@ gamelist-list-screenshot-marquee-nh">
                 <size>1 1</size>
                 <path>./_assets/images/metadata-background.svg</path>
                 <color>${gamelistMetadataBackgroundColor}</color>
-                <zIndex>1</zIndex>
+                <zIndex>4</zIndex>
                 <visible>false</visible>
             </image>
             <image name="logo">
@@ -440,7 +440,9 @@ gamelist-list-metadata-cover-nh">
         </view>
     </variant>
     <variant name="gamelist-list-metadata-screenshot,
-gamelist-list-metadata-screenshot-nh">
+gamelist-list-metadata-screenshot-nh,
+gamelist-list-metadata-screenshot-marquee,
+gamelist-list-metadata-screenshot-marquee-nh">
         <view name="gamelist">
             <video name="game-art">
                 <origin>0.5 1</origin>
@@ -452,11 +454,6 @@ gamelist-list-metadata-screenshot-nh">
     <variant name="gamelist-list-metadata-screenshot-marquee,
 gamelist-list-metadata-screenshot-marquee-nh">
         <view name="gamelist">
-            <video name="game-art">
-                <origin>0.5 1</origin>
-                <imageType>screenshot</imageType>
-                <zIndex>1</zIndex>
-            </video>
             <image name="marquee">
                 <origin>1 1</origin>
                 <imageType>marquee</imageType>
@@ -525,7 +522,7 @@ gamelist-grid-cover-steamgriddb-nh">
         </view>
     </variant>
     <variant name="gamelist-grid-screenshot,
-        gamelist-grid-screenshot-nh">
+gamelist-grid-screenshot-nh">
         <include>./_systems/coversize/1-1.xml</include>
         <view name="gamelist">
             <grid name="gamelist-grid">

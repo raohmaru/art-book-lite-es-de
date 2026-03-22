@@ -169,7 +169,25 @@ theme:
           path: ./_assets/sounds/launch.wav
       $name: all
   variant:
-    - view:
+    - $name: |-
+        gamelist-list-basic,
+        gamelist-list-basic-nh,
+        gamelist-list-metadata-miximage,
+        gamelist-list-metadata-miximage-nh,
+        gamelist-list-metadata-cover,
+        gamelist-list-metadata-cover-nh,
+        gamelist-list-metadata-screenshot,
+        gamelist-list-metadata-screenshot-nh,
+        gamelist-list-metadata-screenshot-marquee,
+        gamelist-list-metadata-screenshot-marquee-nh,
+        gamelist-list-metadata-screenshot-cover,
+        gamelist-list-metadata-screenshot-cover-nh,
+        gamelist-list-cover,
+        gamelist-list-cover-nh,
+        gamelist-list-screenshot-marquee,
+        gamelist-list-screenshot-marquee-nh
+      view:
+        $name: gamelist
         image:
           - $name: background
             color: ${gamelistListBackgroundColor}
@@ -185,7 +203,7 @@ theme:
             size: 1280 720
             path: ./_assets/images/metadata-background.svg
             color: ${gamelistMetadataBackgroundColor}
-            zIndex: 1
+            zIndex: 4
             visible: false
           - $name: logo
             color: ${gamelistListLogoColor}
@@ -224,10 +242,15 @@ theme:
           selectedBackgroundColor: ${gamelistListTextlistSelectedBackgroundColor}
           selectedBackgroundCornerRadius: 0.005
           zIndex: 5
-        $name: gamelist
-      $name: |-
+    - $name: |-
         gamelist-list-basic,
-        gamelist-list-basic-nh,
+        gamelist-list-basic-nh
+      view:
+        $name: gamelist
+        textlist:
+          $name: gamelist-list
+          horizontalAlignment: center
+    - $name: |-
         gamelist-list-metadata-miximage,
         gamelist-list-metadata-miximage-nh,
         gamelist-list-metadata-cover,
@@ -242,15 +265,8 @@ theme:
         gamelist-list-cover-nh,
         gamelist-list-screenshot-marquee,
         gamelist-list-screenshot-marquee-nh
-    - view:
-        textlist:
-          $name: gamelist-list
-          horizontalAlignment: center
+      view:
         $name: gamelist
-      $name: |-
-        gamelist-list-basic,
-        gamelist-list-basic-nh
-    - view:
         video:
           $name: game-art
           delay: 3
@@ -258,8 +274,7 @@ theme:
           onIterationsDone: image
           interpolation: nearest
           pillarboxes: false
-        $name: gamelist
-      $name: |-
+    - $name: |-
         gamelist-list-metadata-miximage,
         gamelist-list-metadata-miximage-nh,
         gamelist-list-metadata-cover,
@@ -269,12 +284,9 @@ theme:
         gamelist-list-metadata-screenshot-marquee,
         gamelist-list-metadata-screenshot-marquee-nh,
         gamelist-list-metadata-screenshot-cover,
-        gamelist-list-metadata-screenshot-cover-nh,
-        gamelist-list-cover,
-        gamelist-list-cover-nh,
-        gamelist-list-screenshot-marquee,
-        gamelist-list-screenshot-marquee-nh
-    - view:
+        gamelist-list-metadata-screenshot-cover-nh
+      view:
+        $name: gamelist
         text:
           - $name: description
             origin: 0 0
@@ -406,62 +418,51 @@ theme:
             color: ${gamelistListMetadataColor}
             displayRelative: true
             visible: false
-        $name: gamelist
-      $name: |-
+    - $name: |-
         gamelist-list-metadata-miximage,
-        gamelist-list-metadata-miximage-nh,
-        gamelist-list-metadata-cover,
-        gamelist-list-metadata-cover-nh,
-        gamelist-list-metadata-screenshot,
-        gamelist-list-metadata-screenshot-nh,
-        gamelist-list-metadata-screenshot-marquee,
-        gamelist-list-metadata-screenshot-marquee-nh,
-        gamelist-list-metadata-screenshot-cover,
-        gamelist-list-metadata-screenshot-cover-nh
-    - view:
+        gamelist-list-metadata-miximage-nh
+      view:
+        $name: gamelist
         video:
           $name: game-art
           origin: 0.5 0.5
           imageType: miximage
+    - $name: |-
+        gamelist-list-metadata-cover,
+        gamelist-list-metadata-cover-nh
+      view:
         $name: gamelist
-      $name: |-
-        gamelist-list-metadata-miximage,
-        gamelist-list-metadata-miximage-nh
-    - view:
         video:
           $name: game-art
           origin: 0.5 0.5
           imageType: cover
           imageCornerRadius: 0.005
-        $name: gamelist
-      $name: |-
-        gamelist-list-metadata-cover,
-        gamelist-list-metadata-cover-nh
-    - view:
-        video:
-          $name: game-art
-          origin: 0.5 1
-          imageType: screenshot
-          zIndex: 1
-        $name: gamelist
-      $name: |-
+    - $name: |-
         gamelist-list-metadata-screenshot,
-        gamelist-list-metadata-screenshot-nh
-    - view:
+        gamelist-list-metadata-screenshot-nh,
+        gamelist-list-metadata-screenshot-marquee,
+        gamelist-list-metadata-screenshot-marquee-nh
+      view:
+        $name: gamelist
         video:
           $name: game-art
           origin: 0.5 1
           imageType: screenshot
           zIndex: 1
+    - $name: |-
+        gamelist-list-metadata-screenshot-marquee,
+        gamelist-list-metadata-screenshot-marquee-nh
+      view:
         image:
           $name: marquee
           origin: 1 1
           imageType: marquee
         $name: gamelist
-      $name: |-
-        gamelist-list-metadata-screenshot-marquee,
-        gamelist-list-metadata-screenshot-marquee-nh
-    - view:
+    - $name: |-
+        gamelist-list-metadata-screenshot-cover,
+        gamelist-list-metadata-screenshot-cover-nh
+      view:
+        $name: gamelist
         video:
           $name: game-art
           origin: 0.5 1
@@ -472,11 +473,11 @@ theme:
           origin: 1 1
           imageType: cover
           cornerRadius: 0.005
+    - $name: |-
+        gamelist-list-cover,
+        gamelist-list-cover-nh
+      view:
         $name: gamelist
-      $name: |-
-        gamelist-list-metadata-screenshot-cover,
-        gamelist-list-metadata-screenshot-cover-nh
-    - view:
         image:
           $name: background
           color: ${gamelistListTextlistBackgroundColor}
@@ -486,11 +487,11 @@ theme:
           imageCornerRadius: 0.005
           imageType: cover
           zIndex: 1
+    - $name: |-
+        gamelist-list-screenshot-marquee,
+        gamelist-list-screenshot-marquee-nh
+      view:
         $name: gamelist
-      $name: |-
-        gamelist-list-cover,
-        gamelist-list-cover-nh
-    - view:
         video:
           $name: game-art
           origin: 0.5 0.5
@@ -500,39 +501,43 @@ theme:
           $name: marquee
           origin: 0.5 0.5
           imageType: marquee
-        $name: gamelist
-      $name: |-
-        gamelist-list-screenshot-marquee,
-        gamelist-list-screenshot-marquee-nh
-    - include: ./_systems/coversize/${systemCoverSize}.xml
+    - $name: |-
+        gamelist-grid-cover,
+        gamelist-grid-cover-nh
+      include: ./_systems/coversize/${systemCoverSize}.xml
       view:
+        $name: gamelist
         grid:
           $name: gamelist-grid
           imageType: cover,screenshot
-        $name: gamelist
-      $name: |-
-        gamelist-grid-cover,
-        gamelist-grid-cover-nh
-    - include: ./_systems/coversize/2-3.xml
+    - $name: |-
+        gamelist-grid-cover-steamgriddb,
+        gamelist-grid-cover-steamgriddb-nh
+      include: ./_systems/coversize/2-3.xml
       view:
+        $name: gamelist
         grid:
           $name: gamelist-grid
           imageType: cover
-        $name: gamelist
-      $name: |-
-        gamelist-grid-cover-steamgriddb,
-        gamelist-grid-cover-steamgriddb-nh
-    - include: ./_systems/coversize/1-1.xml
+    - $name: |-
+        gamelist-grid-screenshot,
+        gamelist-grid-screenshot-nh
+      include: ./_systems/coversize/1-1.xml
       view:
+        $name: gamelist
         grid:
           $name: gamelist-grid
           imageType: screenshot
           imageFit: cover
-        $name: gamelist
-      $name: |-
+    - $name: |-
+        gamelist-grid-cover,
+        gamelist-grid-cover-nh,
+        gamelist-grid-cover-steamgriddb,
+        gamelist-grid-cover-steamgriddb-nh,
         gamelist-grid-screenshot,
-                gamelist-grid-screenshot-nh
-    - view:
+        gamelist-grid-screenshot-nh
+      view:
+        $name: gamelist
         image:
           - $name: background
             color: 00000000
@@ -588,14 +593,6 @@ theme:
           backgroundCornerRadius: 0.004
           textBackgroundCornerRadius: 0.004
           zIndex: 2
-        $name: gamelist
-      $name: |-
-        gamelist-grid-cover,
-        gamelist-grid-cover-nh,
-        gamelist-grid-cover-steamgriddb,
-        gamelist-grid-cover-steamgriddb-nh,
-        gamelist-grid-screenshot,
-        gamelist-grid-screenshot-nh
   aspectRatio:
     - $name: '16:9'
       include: ./aspect-ratio-16-9.xml

@@ -251,7 +251,7 @@ gamelist-list-screenshot-marquee-nh">
         </fontSize>
     </variant>
     <variant name="gamelist-list-basic,
-      gamelist-list-basic-nh">
+gamelist-list-basic-nh">
         <view name="gamelist">
             <image name="gamelist-background">
                 <visible>false</visible>
@@ -342,6 +342,23 @@ gamelist-list-metadata-screenshot-marquee-nh,
 gamelist-list-metadata-screenshot-cover,
 gamelist-list-metadata-screenshot-cover-nh">
         <view name="gamelist">
+            <rating name="rating">
+                <size>0 0.05</size>
+                <pos>0.8359375 0.4861111111111111</pos>
+                <visible>true</visible>
+            </rating>
+            <datetime name="releasedate">
+                <pos>0.86953125 0.6180555555555556</pos>
+                <fontSize>${gamelistMetadataFontSize}</fontSize>
+                <format>${gamelistDateFormat}</format>
+                <visible>true</visible>
+            </datetime>
+            <datetime name="last-played">
+                <pos>0.85390625 0.9291666666666667</pos>
+                <fontSize>${gamelistMetadataFontSize}</fontSize>
+                <format>${gamelistDateFormat}</format>
+                <visible>true</visible>
+            </datetime>
             <text name="description">
                 <pos>0.45703125 0.625</pos>
                 <size>0.328125 0.3236111111111111</size>
@@ -349,54 +366,65 @@ gamelist-list-metadata-screenshot-cover-nh">
                 <lineSpacing>${gamelistDescriptionLineSpacing}</lineSpacing>
                 <visible>true</visible>
             </text>
-            <text name="genre">
-                <pos>0.86015625 0.8041666666666667</pos>
+            <text name="players">
+                <pos>0.87265625 0.5555555555555556</pos>
                 <fontSize>${gamelistMetadataFontSize}</fontSize>
                 <visible>true</visible>
             </text>
-            <text name="play-time">
-                <pos>0.86015625 0.8666666666666667</pos>
+            <text name="genre">
+                <pos>0.86640625 0.6805555555555556</pos>
                 <fontSize>${gamelistMetadataFontSize}</fontSize>
                 <visible>true</visible>
             </text>
             <text name="developer">
-                <pos>0.86015625 0.9291666666666667</pos>
+                <pos>0.86328125 0.7430555555555556</pos>
+                <fontSize>${gamelistMetadataFontSize}</fontSize>
+                <visible>true</visible>
+            </text>
+            <text name="publisher">
+                <pos>0.86015625 0.8055555555555556</pos>
+                <fontSize>${gamelistMetadataFontSize}</fontSize>
+                <visible>true</visible>
+            </text>
+            <text name="play-time">
+                <pos>0.85703125 0.8666666666666667</pos>
                 <fontSize>${gamelistMetadataFontSize}</fontSize>
                 <visible>true</visible>
             </text>
             <image name="releasedate-icon,
 genre-icon,
 play-time-icon,
-developer-icon">
+last-played-icon,
+developer-icon,
+publisher-icon,
+players-icon">
                 <size>0 0.05</size>
                 <visible>true</visible>
             </image>
+            <image name="players-icon">
+                <pos>0.8328125 0.5555555555555556</pos>
+            </image>
             <image name="releasedate-icon">
-                <pos>0.8203125 0.7416666666666667</pos>
+                <pos>0.8296875 0.6180555555555556</pos>
             </image>
             <image name="genre-icon">
-                <pos>0.8203125 0.8041666666666667</pos>
-            </image>
-            <image name="play-time-icon">
-                <pos>0.8203125 0.8666666666666667</pos>
+                <pos>0.8265625 0.6805555555555556</pos>
             </image>
             <image name="developer-icon">
-                <pos>0.8203125 0.9291666666666667</pos>
+                <pos>0.8234375 0.7430555555555556</pos>
+            </image>
+            <image name="publisher-icon">
+                <pos>0.8203125 0.8055555555555556</pos>
+            </image>
+            <image name="play-time-icon">
+                <pos>0.8171875 0.8666666666666667</pos>
+            </image>
+            <image name="last-played-icon">
+                <pos>0.8140625 0.9291666666666667</pos>
             </image>
             <image name="metadata-background">
                 <visible>true</visible>
             </image>
-            <rating name="rating">
-                <size>0 0.05</size>
-                <pos>0.8203125 0.6736111111111112</pos>
-                <visible>true</visible>
-            </rating>
-            <datetime name="releasedate">
-                <pos>0.86015625 0.7416666666666667</pos>
-                <fontSize>${gamelistMetadataFontSize}</fontSize>
-                <format>${gamelistDateFormat}</format>
-                <visible>true</visible>
-            </datetime>
         </view>
         <fontSize name="x-small">
             <variables>
@@ -451,11 +479,13 @@ gamelist-list-metadata-cover-nh">
         </view>
     </variant>
     <variant name="gamelist-list-metadata-screenshot, 
-      gamelist-list-metadata-screenshot-nh">
+gamelist-list-metadata-screenshot-nh,
+gamelist-list-metadata-screenshot-marquee, 
+gamelist-list-metadata-screenshot-marquee-nh">
         <view name="gamelist">
             <video name="game-art">
-                <pos>0.71875 0.5833333333333334</pos>
-                <cropSize>0.5625 0.5833333333333334</cropSize>
+                <pos>0.63828125 0.5833333333333334</pos>
+                <cropSize>0.40625 0.5833333333333334</cropSize>
             </video>
         </view>
     </variant>
@@ -464,13 +494,9 @@ gamelist-list-metadata-screenshot-marquee-nh">
         <view name="gamelist">
             <image name="marquee">
                 <origin>0.5 0.5</origin>
-                <pos>0.89453125 0.6138888888888889</pos>
-                <maxSize>0.17578125 0.125</maxSize>
+                <pos>0.91171875 0.2916666666666667</pos>
+                <maxSize>0.140625 0.075</maxSize>
             </image>
-            <video name="game-art">
-                <pos>0.71875 0.5833333333333334</pos>
-                <cropSize>0.5625 0.5833333333333334</cropSize>
-            </video>
         </view>
     </variant>
     <variant name="gamelist-list-metadata-screenshot-cover,

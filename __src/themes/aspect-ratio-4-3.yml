@@ -21,6 +21,7 @@ theme:
       carousel:
         $name: system-carousel
         maxItemCount: 4.15
+        selectedItemMargins: 14 10
       image:
         $name: system-logo
         maxSize: 416 168

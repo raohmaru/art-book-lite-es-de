@@ -18,6 +18,7 @@
     <view name="system">
         <carousel name="system-carousel">
             <maxItemCount>4.15</maxItemCount>
+            <selectedItemMargins>0.021875 0.020833333333333332</selectedItemMargins>
         </carousel>
         <image name="system-logo">
             <maxSize>0.65 0.35</maxSize>
