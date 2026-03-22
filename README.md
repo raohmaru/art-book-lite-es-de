@@ -38,7 +38,7 @@ You can also add custom artwork and logos for any custom collections you create,
 
 ## Development
 
-Theme files are [YAML](https://yaml.org/) files located in the [__src/themes](https://github.com/raohmaru/art-book-lite-es-de/tree/main/__src/themes) folder. Do not modify the XML files in the root folder.
+Theme files are [YAML](https://yaml.org/) files located in the [__src/themes](https://github.com/raohmaru/art-book-lite-es-de/tree/main/__src/themes) folder. Please do not modify the XML files in the root.
 
 ### Setup
 
