@@ -6,7 +6,7 @@ Optimized for handheld devices.
 
 ## Preview
 
-
+https://github.com/user-attachments/assets/96240f51-555c-4f3a-b082-4c731764cb38
 
 ## Features
 
