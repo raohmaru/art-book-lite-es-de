@@ -20,7 +20,7 @@ A custom color scheme lets you to modify any of the colors, artwork, logos and f
 
 #### Instructions
 
-1) In the theme-customizations folder you will find a file called [customizations.xml](https://github.com/raohmaru/art-book-lite-es-de/blob/main/theme-customizations/customizations.xml)
+1) In the theme-customizations folder you will find a file called [customizations.xml](https://github.com/raohmaru/art-book-lite-es-de/blob/main/dist/theme-customizations/customizations.xml)
 
 2) Edit the properites in `customizations.xml` to create your custom color scheme.
     
@@ -38,28 +38,28 @@ You can also add custom artwork and logos for any custom collections you create,
 
 ## Development
 
-Theme files are [YAML](https://yaml.org/) files located in the [__src/themes](https://github.com/raohmaru/art-book-lite-es-de/tree/main/__src/themes) folder. Please do not modify the XML files in the root.
+Theme files are [YAML](https://yaml.org/) files located in the [src/themes](https://github.com/raohmaru/art-book-lite-es-de/tree/main/src/themes) folder.
 
 ### Setup
 
 You need to have [Node.js](https://nodejs.org/en) installed, minimum version 22.
 
-To setup the development environment, run the following command in the `__src` folder:
+To setup the development environment, run the following command in the `src` folder:
 ```bash
 npm install --ignore-scripts
 ```
 
 ### Build
 
-To build the theme, run the following command in the `__src` folder:
+To build the theme, run the following command in the `src` folder:
 ```bash
 npm run build
 ```
-The theme will be built in the root folder.
+The theme will be built in the `dist/` folder.
 
 ### Watcher
 
-To automatically build the theme when you make changes to the YAML files, run the following command in the `__src` folder:
+To automatically build the theme when you make changes to the YAML files, run the following command in the `src` folder:
 ```bash
 npm run watch
 ```

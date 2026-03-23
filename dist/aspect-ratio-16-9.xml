@@ -254,24 +254,29 @@ gamelist-list-screenshot-marquee-nh">
 gamelist-list-basic-nh">
         <view name="gamelist">
             <image name="gamelist-background">
-                <visible>false</visible>
+                <path>./_assets/images/gamelist-background-list.svg</path>
             </image>
             <image name="logo">
                 <pos>0.5 0.13055555555555556</pos>
             </image>
+            <badges name="badges">
+                <visible>false</visible>
+            </badges>
         </view>
     </variant>
     <variant name="gamelist-list-basic">
         <view name="gamelist">
             <textlist name="gamelist-list">
-                <size>0.91796875 0.5708333333333333</size>
+                <pos>0.5 0.5486111111111112</pos>
+                <size>0.5859375 0.5972222222222222</size>
             </textlist>
         </view>
     </variant>
     <variant name="gamelist-list-basic-nh">
         <view name="gamelist">
             <textlist name="gamelist-list">
-                <size>0.91796875 0.6986111111111111</size>
+                <pos>0.5 0.5972222222222222</pos>
+                <size>0.5859375 0.6666666666666666</size>
             </textlist>
         </view>
     </variant>
@@ -473,8 +478,8 @@ gamelist-list-metadata-cover,
 gamelist-list-metadata-cover-nh">
         <view name="gamelist">
             <video name="game-art">
-                <pos>0.73828125 0.32083333333333336</pos>
-                <maxSize>0.515625 0.5625</maxSize>
+                <pos>0.63828125 0.32083333333333336</pos>
+                <maxSize>0.3328125 0.5625</maxSize>
             </video>
         </view>
     </variant>
@@ -504,8 +509,8 @@ gamelist-list-metadata-screenshot-cover-nh">
         <view name="gamelist">
             <image name="cover">
                 <origin>0.5 0.5</origin>
-                <pos>0.89453125 0.6083333333333333</pos>
-                <maxSize>0.17578125 0.3333333333333333</maxSize>
+                <pos>0.915625 0.2986111111111111</pos>
+                <maxSize>0.140625 0.26666666666666666</maxSize>
             </image>
             <video name="game-art">
                 <pos>0.71875 0.5833333333333334</pos>
@@ -521,9 +526,6 @@ gamelist-list-cover-nh">
                 <cropSize>0.625 1</cropSize>
                 <imageMaxSize>0.54296875 0.8638888888888889</imageMaxSize>
             </video>
-            <image name="gamelist-background">
-                <visible>false</visible>
-            </image>
             <badges name="badges">
                 <visible>false</visible>
             </badges>

@@ -6,9 +6,9 @@
   "main": "index.js",
   "scripts": {
     "build": "npm run theme && npm run 16x9 && npm run 4x3",
-    "theme": "node yml-to-xml.js -w 1280 -h 720 -o ../theme.xml ./themes/theme.yml",
-    "16x9": "node yml-to-xml.js -w 1280 -h 720 -o ../aspect-ratio-16-9.xml ./themes/aspect-ratio-16-9.yml",
-    "4x3": "node yml-to-xml.js -w 640 -h 480 -o ../aspect-ratio-4-3.xml ./themes/aspect-ratio-4-3.yml",
+    "theme": "node yml-to-xml.js -w 1280 -h 720 -o ../dist/theme.xml ./themes/theme.yml",
+    "16x9": "node yml-to-xml.js -w 1280 -h 720 -o ../dist/aspect-ratio-16-9.xml ./themes/aspect-ratio-16-9.yml",
+    "4x3": "node yml-to-xml.js -w 640 -h 480 -o ../dist/aspect-ratio-4-3.xml ./themes/aspect-ratio-4-3.yml",
     "watch": "node watch.js"
   },
   "repository": {

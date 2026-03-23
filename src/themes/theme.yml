@@ -249,6 +249,7 @@ theme:
         $name: gamelist
         textlist:
           $name: gamelist-list
+          origin: 0.5 0.5
           horizontalAlignment: center
     - $name: |-
         gamelist-list-metadata-miximage,
@@ -322,7 +323,7 @@ theme:
             containerStartDelay: 5
           - $name: developer
             origin: 0 0.5
-            size: 142 0
+            size: 146 0
             metadata: developer
             defaultValue: Not Set
             fontPath: ${fontLight}
@@ -333,6 +334,7 @@ theme:
             visible: false
           - $name: publisher
             origin: 0 0.5
+            size: 150 0
             metadata: publisher
             defaultValue: Not Set
             fontPath: ${fontLight}
@@ -470,7 +472,7 @@ theme:
           zIndex: 1
         image:
           $name: cover
-          origin: 1 1
+          origin: 0.5 0.5
           imageType: cover
           cornerRadius: 0.005
     - $name: |-
@@ -480,7 +482,7 @@ theme:
         $name: gamelist
         image:
           $name: background
-          color: ${gamelistListTextlistBackgroundColor}
+          color: ${gamelistListBackgroundColor}
         video:
           $name: game-art
           origin: 0.5 0.5
@@ -577,7 +579,7 @@ theme:
           size: 1280 636
           itemScale: 1.2
           scaleInwards: true
-          itemSpacing: 3840 3
+          itemSpacing: 2 2
           unfocusedItemOpacity: 0.5
           unfocusedItemDimming: 1
           unfocusedItemSaturation: 1

@@ -29,7 +29,7 @@ watcher
 
         const outputPath = path.basename(filePath, path.extname(filePath));
 
-        const child = spawn('node', ['yml-to-xml.js', '-w', w, '-h', h, '-o', `../${outputPath}.xml`, filePath]);
+        const child = spawn('node', ['yml-to-xml.js', '-w', w, '-h', h, '-o', `../dist/${outputPath}.xml`, filePath]);
 
         child.stdout.on('data', (data) => {
             console.log(data.toString());

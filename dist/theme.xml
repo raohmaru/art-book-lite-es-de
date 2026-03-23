@@ -236,6 +236,7 @@ gamelist-list-screenshot-marquee-nh">
 gamelist-list-basic-nh">
         <view name="gamelist">
             <textlist name="gamelist-list">
+                <origin>0.5 0.5</origin>
                 <horizontalAlignment>center</horizontalAlignment>
             </textlist>
         </view>
@@ -312,7 +313,7 @@ gamelist-list-metadata-screenshot-cover-nh">
             </text>
             <text name="developer">
                 <origin>0 0.5</origin>
-                <size>0.1109375 0</size>
+                <size>0.1140625 0</size>
                 <metadata>developer</metadata>
                 <defaultValue>Not Set</defaultValue>
                 <fontPath>${fontLight}</fontPath>
@@ -324,6 +325,7 @@ gamelist-list-metadata-screenshot-cover-nh">
             </text>
             <text name="publisher">
                 <origin>0 0.5</origin>
+                <size>0.1171875 0</size>
                 <metadata>publisher</metadata>
                 <defaultValue>Not Set</defaultValue>
                 <fontPath>${fontLight}</fontPath>
@@ -469,7 +471,7 @@ gamelist-list-metadata-screenshot-cover-nh">
                 <zIndex>1</zIndex>
             </video>
             <image name="cover">
-                <origin>1 1</origin>
+                <origin>0.5 0.5</origin>
                 <imageType>cover</imageType>
                 <cornerRadius>0.005</cornerRadius>
             </image>
@@ -479,7 +481,7 @@ gamelist-list-metadata-screenshot-cover-nh">
 gamelist-list-cover-nh">
         <view name="gamelist">
             <image name="background">
-                <color>${gamelistListTextlistBackgroundColor}</color>
+                <color>${gamelistListBackgroundColor}</color>
             </image>
             <video name="game-art">
                 <origin>0.5 0.5</origin>
@@ -579,7 +581,7 @@ gamelist-grid-screenshot-nh">
                 <size>1 0.8833333333333333</size>
                 <itemScale>1.2</itemScale>
                 <scaleInwards>true</scaleInwards>
-                <itemSpacing>3 0.004166666666666667</itemSpacing>
+                <itemSpacing>0.0015625 0.002777777777777778</itemSpacing>
                 <unfocusedItemOpacity>0.5</unfocusedItemOpacity>
                 <unfocusedItemDimming>1</unfocusedItemDimming>
                 <unfocusedItemSaturation>1</unfocusedItemSaturation>
