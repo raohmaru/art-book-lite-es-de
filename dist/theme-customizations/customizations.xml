@@ -9,6 +9,7 @@
             <artworkSource>./theme-customizations/artwork</artworkSource>
             <artworkSourceDefault>./_systems/artwork-outline</artworkSourceDefault>
             <logoSource>./theme-customizations/logos</logoSource>
+            <badgesColor>dark</badgesColor>
             <!-- System View -->
             <systemBackgroundColor>000000</systemBackgroundColor>
             <systemArtSaturation>1</systemArtSaturation>

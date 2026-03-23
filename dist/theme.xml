@@ -205,11 +205,11 @@ gamelist-list-screenshot-marquee-nh">
                 <itemsPerLine>5</itemsPerLine>
                 <itemMargin>0.01015625 0.009722222222222222</itemMargin>
                 <slots>folder,favorite,completed,collection,altemulator</slots>
-                <customBadgeIcon badge="folder">./_assets/images/badge-folder.svg</customBadgeIcon>
-                <customBadgeIcon badge="favorite">./_assets/images/badge-favorite.svg</customBadgeIcon>
-                <customBadgeIcon badge="completed">./_assets/images/badge-completed.svg</customBadgeIcon>
-                <customBadgeIcon badge="collection">./_assets/images/badge-collection.svg</customBadgeIcon>
-                <customBadgeIcon badge="altemulator">./_assets/images/badge-altemulator.svg</customBadgeIcon>
+                <customBadgeIcon badge="folder">./_assets/images/${badgesColor}/badge-folder.svg</customBadgeIcon>
+                <customBadgeIcon badge="favorite">./_assets/images/${badgesColor}/badge-favorite.svg</customBadgeIcon>
+                <customBadgeIcon badge="completed">./_assets/images/${badgesColor}/badge-completed.svg</customBadgeIcon>
+                <customBadgeIcon badge="collection">./_assets/images/${badgesColor}/badge-collection.svg</customBadgeIcon>
+                <customBadgeIcon badge="altemulator">./_assets/images/${badgesColor}/badge-altemulator.svg</customBadgeIcon>
                 <controllerSize>0.8</controllerSize>
                 <folderLinkSize>0.8</folderLinkSize>
             </badges>
@@ -541,7 +541,7 @@ gamelist-grid-screenshot,
 gamelist-grid-screenshot-nh">
         <view name="gamelist">
             <image name="background">
-                <color>00000000</color>
+                <color>${gamelistListBackgroundColor}</color>
             </image>
             <image name="logo">
                 <origin>0 0.5</origin>

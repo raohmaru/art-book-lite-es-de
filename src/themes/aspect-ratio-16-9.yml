@@ -273,7 +273,7 @@ theme:
           pos: 278 94
         badges:
           $name: badges
-          pos: 586 30
+          pos: 515 30
           size: 54 270
           origin: 0.5 0
           direction: column
@@ -290,7 +290,7 @@ theme:
         $name: gamelist
         textlist:
           $name: gamelist-list
-          size: 450 411
+          size: 390 411
     - $name: |-
         gamelist-list-metadata-miximage-nh,
         gamelist-list-metadata-cover-nh,
@@ -303,7 +303,7 @@ theme:
         $name: gamelist
         textlist:
           $name: gamelist-list
-          size: 450 411
+          size: 390 480
     - $name: |-
         gamelist-list-metadata-miximage,
         gamelist-list-metadata-miximage-nh,
@@ -335,8 +335,8 @@ theme:
             visible: true
         text:
           - $name: description
-            pos: 585 450
-            size: 420 233
+            pos: 515 450
+            size: 475 233
             fontSize: ${gamelistDescriptionFontSize}
             lineSpacing: ${gamelistDescriptionLineSpacing}
             visible: true
@@ -427,19 +427,21 @@ theme:
         $name: gamelist
         video:
           $name: game-art
-          pos: 817 231
-          maxSize: 426 405
+          pos: 779 231
+          maxSize: 480 405
     - $name: |-
         gamelist-list-metadata-screenshot, 
         gamelist-list-metadata-screenshot-nh,
         gamelist-list-metadata-screenshot-marquee, 
-        gamelist-list-metadata-screenshot-marquee-nh
+        gamelist-list-metadata-screenshot-marquee-nh,
+        gamelist-list-metadata-screenshot-cover,
+        gamelist-list-metadata-screenshot-cover-nh
       view:
         $name: gamelist
         video:
           $name: game-art
-          pos: 817 420
-          cropSize: 520 420
+          pos: 783 420
+          cropSize: 588 420
     - $name: |-
         gamelist-list-metadata-screenshot-marquee, 
         gamelist-list-metadata-screenshot-marquee-nh
@@ -449,7 +451,7 @@ theme:
           $name: marquee
           origin: 0.5 0.5
           pos: 1167 210
-          maxSize: 180 54
+          maxSize: 180 150
     - $name: |-
         gamelist-list-metadata-screenshot-cover,
         gamelist-list-metadata-screenshot-cover-nh
@@ -460,10 +462,6 @@ theme:
           origin: 0.5 0.5
           pos: 1172 215
           maxSize: 180 192
-        video:
-          $name: game-art
-          pos: 920 420
-          cropSize: 720 420
     - $name: |-
         gamelist-list-cover,
         gamelist-list-cover-nh
@@ -488,8 +486,8 @@ theme:
           maxSize: 465 450
         video:
           $name: game-art
-          pos: 880 360
-          cropSize: 800 720
+          pos: 870 360
+          cropSize: 820 720
     - $name: |-
         gamelist-grid-cover,
         gamelist-grid-cover-nh,

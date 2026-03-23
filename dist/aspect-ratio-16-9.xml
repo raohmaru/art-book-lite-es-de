@@ -302,7 +302,7 @@ gamelist-list-screenshot-marquee-nh">
                 <pos>0.2171875 0.13055555555555556</pos>
             </text>
             <badges name="badges">
-                <pos>0.4578125 0.041666666666666664</pos>
+                <pos>0.40234375 0.041666666666666664</pos>
                 <size>0.0421875 0.375</size>
                 <origin>0.5 0</origin>
                 <direction>column</direction>
@@ -319,7 +319,7 @@ gamelist-list-cover,
 gamelist-list-screenshot-marquee">
         <view name="gamelist">
             <textlist name="gamelist-list">
-                <size>0.3515625 0.5708333333333333</size>
+                <size>0.3046875 0.5708333333333333</size>
             </textlist>
         </view>
     </variant>
@@ -332,7 +332,7 @@ gamelist-list-cover-nh,
 gamelist-list-screenshot-marquee-nh">
         <view name="gamelist">
             <textlist name="gamelist-list">
-                <size>0.3515625 0.5708333333333333</size>
+                <size>0.3046875 0.6666666666666666</size>
             </textlist>
         </view>
     </variant>
@@ -365,8 +365,8 @@ gamelist-list-metadata-screenshot-cover-nh">
                 <visible>true</visible>
             </datetime>
             <text name="description">
-                <pos>0.45703125 0.625</pos>
-                <size>0.328125 0.3236111111111111</size>
+                <pos>0.40234375 0.625</pos>
+                <size>0.37109375 0.3236111111111111</size>
                 <fontSize>${gamelistDescriptionFontSize}</fontSize>
                 <lineSpacing>${gamelistDescriptionLineSpacing}</lineSpacing>
                 <visible>true</visible>
@@ -478,19 +478,21 @@ gamelist-list-metadata-cover,
 gamelist-list-metadata-cover-nh">
         <view name="gamelist">
             <video name="game-art">
-                <pos>0.63828125 0.32083333333333336</pos>
-                <maxSize>0.3328125 0.5625</maxSize>
+                <pos>0.60859375 0.32083333333333336</pos>
+                <maxSize>0.375 0.5625</maxSize>
             </video>
         </view>
     </variant>
     <variant name="gamelist-list-metadata-screenshot, 
 gamelist-list-metadata-screenshot-nh,
 gamelist-list-metadata-screenshot-marquee, 
-gamelist-list-metadata-screenshot-marquee-nh">
+gamelist-list-metadata-screenshot-marquee-nh,
+gamelist-list-metadata-screenshot-cover,
+gamelist-list-metadata-screenshot-cover-nh">
         <view name="gamelist">
             <video name="game-art">
-                <pos>0.63828125 0.5833333333333334</pos>
-                <cropSize>0.40625 0.5833333333333334</cropSize>
+                <pos>0.61171875 0.5833333333333334</pos>
+                <cropSize>0.459375 0.5833333333333334</cropSize>
             </video>
         </view>
     </variant>
@@ -500,7 +502,7 @@ gamelist-list-metadata-screenshot-marquee-nh">
             <image name="marquee">
                 <origin>0.5 0.5</origin>
                 <pos>0.91171875 0.2916666666666667</pos>
-                <maxSize>0.140625 0.075</maxSize>
+                <maxSize>0.140625 0.20833333333333334</maxSize>
             </image>
         </view>
     </variant>
@@ -512,10 +514,6 @@ gamelist-list-metadata-screenshot-cover-nh">
                 <pos>0.915625 0.2986111111111111</pos>
                 <maxSize>0.140625 0.26666666666666666</maxSize>
             </image>
-            <video name="game-art">
-                <pos>0.71875 0.5833333333333334</pos>
-                <cropSize>0.5625 0.5833333333333334</cropSize>
-            </video>
         </view>
     </variant>
     <variant name="gamelist-list-cover,
@@ -539,8 +537,8 @@ gamelist-list-screenshot-marquee-nh">
                 <maxSize>0.36328125 0.625</maxSize>
             </image>
             <video name="game-art">
-                <pos>0.6875 0.5</pos>
-                <cropSize>0.625 1</cropSize>
+                <pos>0.6796875 0.5</pos>
+                <cropSize>0.640625 1</cropSize>
             </video>
         </view>
     </variant>

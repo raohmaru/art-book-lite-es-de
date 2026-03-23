@@ -214,15 +214,15 @@ theme:
             itemMargin: 13 7
             slots: folder,favorite,completed,collection,altemulator
             customBadgeIcon:
-              - '#text': ./_assets/images/badge-folder.svg
+              - '#text': ./_assets/images/${badgesColor}/badge-folder.svg
                 $badge: folder
-              - '#text': ./_assets/images/badge-favorite.svg
+              - '#text': ./_assets/images/${badgesColor}/badge-favorite.svg
                 $badge: favorite
-              - '#text': ./_assets/images/badge-completed.svg
+              - '#text': ./_assets/images/${badgesColor}/badge-completed.svg
                 $badge: completed
-              - '#text': ./_assets/images/badge-collection.svg
+              - '#text': ./_assets/images/${badgesColor}/badge-collection.svg
                 $badge: collection
-              - '#text': ./_assets/images/badge-altemulator.svg
+              - '#text': ./_assets/images/${badgesColor}/badge-altemulator.svg
                 $badge: altemulator
             controllerSize: 0.8
             folderLinkSize: 0.8
@@ -542,7 +542,7 @@ theme:
         $name: gamelist
         image:
           - $name: background
-            color: 00000000
+            color: ${gamelistListBackgroundColor}
           - $name: logo
             origin: 0 0.5
             color: ${gamelistListLogoColor}

@@ -172,6 +172,16 @@
             <systemViewLogoPos>0.5 0.33</systemViewLogoPos>
         </variables>
     </colorScheme>
+    <colorScheme name="dark-outline,dark-screenshots,steam-os-screenshots,steam-os-outline,snes-outline,snes-screenshots,famicom-outline,famicom-screenshots,custom">
+        <variables>
+            <badgesColor>dark</badgesColor>
+        </variables>
+    </colorScheme>
+    <colorScheme name="light-outline,light-screenshots">
+        <variables>
+            <badgesColor>light</badgesColor>
+        </variables>
+    </colorScheme>
     <colorScheme name="custom">
         <variables>
             <customizationPath>./theme-customizations/customizations.xml</customizationPath>
