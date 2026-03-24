@@ -267,10 +267,10 @@ theme:
         $name: gamelist
         image:
           $name: logo
-          pos: 278 94
+          pos: 249 94
         text:
           $name: custom-collection-name
-          pos: 278 94
+          pos: 249 94
         badges:
           $name: badges
           pos: 515 30

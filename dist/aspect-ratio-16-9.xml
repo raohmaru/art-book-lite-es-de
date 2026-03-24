@@ -296,10 +296,10 @@ gamelist-list-screenshot-marquee,
 gamelist-list-screenshot-marquee-nh">
         <view name="gamelist">
             <image name="logo">
-                <pos>0.2171875 0.13055555555555556</pos>
+                <pos>0.19453125 0.13055555555555556</pos>
             </image>
             <text name="custom-collection-name">
-                <pos>0.2171875 0.13055555555555556</pos>
+                <pos>0.19453125 0.13055555555555556</pos>
             </text>
             <badges name="badges">
                 <pos>0.40234375 0.041666666666666664</pos>
