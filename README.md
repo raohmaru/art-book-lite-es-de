@@ -64,6 +64,37 @@ To automatically build the theme when you make changes to the YAML files, run th
 npm run watch
 ```
 
+## Testing (Windows)
+
+Follow this steps to test (and develop) the theme in Windows OS.
+
+### Requirements
+
++ [ES-DE](https://es-de.org/) for windows.
++ [RivaTuner Statistics Server](https://www.guru3d.com/download/rtss-rivatuner-statistics-server-download/) (limits ES-DE fps).
+
+### Setup
+
++ Start ES-DE with the following arguments: `ES-DE.exe --resolution w h --debug`,  
+  where `w` and `h` are the width an height of the ES-DE window.
++ Start RivaTuner Statistics Server, create a new profile for the executable ES-DE.exe and set "Framerate limit" to `60`.
+
+### Testing
+
++ Copy the contents of the theme dist folder into `<ES-DE installation dir>\ES-DE\themes\art-book-lite-es-de`.
++ Restart ES-DE.
+
+### Development + Watcher
+
++ Copy the files in [src/dev-win](https://github.com/raohmaru/art-book-lite-es-de/tree/main/src/dev-win) into the installation directory of ES-DE.
++ Modify [ES-DE.bat](https://github.com/raohmaru/art-book-lite-es-de/tree/main/src/dev-win/ES-DE.bat) as needed.
++ Empty the contents of `<ES-DE installation dir>\ES-DE\themes\art-book-lite-es-de`.
++ Create a symbolic link of all the folders and files in the `dist/` folder to `<ES-DE installation dir>\ES-DE\themes\art-book-lite-es-de` (you can use [create_symlinks.bat](https://gist.github.com/raohmaru/3199ef79a4223cd3921d)).
++ Run the [watcher](#Watcher).
++ Execute ES-DE.bat.
+
+Every time a source file is modified, you will need to restart ES-DE or change the theme in the settings in order to see the changes in the UI.
+
 ## License
 
 Creative Commons CC-BY-NC-SA - https://creativecommons.org/licenses/by-nc-sa/4.0
